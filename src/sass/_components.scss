@@ -1,0 +1,49 @@
+.white-patch {
+    width: 100%;
+    max-width: 31.25rem;
+    border-radius: 1.875rem;
+    background-color: $white;
+    padding: 1.875rem;
+
+    .create-icon-label {
+        text-align: center;
+        font-size: 1rem;
+        color: $green;
+        font-weight: 500;
+    }
+    
+    .create-icon {
+        width: 6.25rem;
+        height: 6.25rem;
+        border: 0.156rem dashed $green;
+        border-radius: 6.25rem;
+        cursor: pointer;
+
+        &:hover{
+            border: 0.156rem dashed $green-transparent;
+        }
+
+        &__cross {
+            font-size: 2.125rem;
+            font-weight: 500;
+            color: $green;
+        }
+    }
+      
+    .search-button {
+        width: 7.5rem;
+        height: 3.125rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: $white;
+        background-color: $green;
+        border: none;
+        border-radius: 1.625rem;
+
+        &:hover {
+            background-color: $green-transparent;
+            cursor: pointer;
+        }
+    }
+}
+

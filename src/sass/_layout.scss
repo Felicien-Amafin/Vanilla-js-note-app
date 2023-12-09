@@ -1,0 +1,16 @@
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__gap50 {
+        gap: 5.625rem;
+    }
+    &__gap20 {
+        gap: 1.25rem;
+    }
+    &__gap70 {
+        gap: 4.375rem;
+    }
+}

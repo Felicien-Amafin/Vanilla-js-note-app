@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+//Colors
+$green: rgb(3, 105, 63);
+$green-transparent: rgba(3, 105, 63, 0.658);
+$white: white;
+$box-shadow-grey: rgb(88, 85, 85);
+
+//Reset
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background-color: $green;
+  
+    main {
+        min-height: inherit;
+        width: inherit;
+        padding: 1.875rem;
+    }
+}
+
+//Typography
+h1 {
+    font-size: 2rem;
+    color: $white;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 0.0625rem 0.156rem 0.156rem $box-shadow-grey;
+}
