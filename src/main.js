@@ -1,6 +1,5 @@
 import './sass/main.scss'
-import {Note } from './js/note.js'
-
+import {WritingWindow } from './js/writing-window.js'
 
 class App {
     constructor(rootElement) {
@@ -21,6 +20,7 @@ class App {
             <button id='search-button' class='search-button' type='button'>Search</button>
         </div>
         `
+       document.getElementById('create-icon').addEventListener('click', WritingWindow.displayWritingWindow);
     }
 }
 

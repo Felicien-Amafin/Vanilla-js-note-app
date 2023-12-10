@@ -6,6 +6,8 @@ $green: rgb(3, 105, 63);
 $green-transparent: rgba(3, 105, 63, 0.658);
 $white: white;
 $box-shadow-grey: rgb(88, 85, 85);
+$box-shadow-light-grey: rgba(146, 144, 144, 0.603);
+$dark-grey: rgb(95, 93, 93);
 
 //Reset
 * {
@@ -20,12 +22,11 @@ html {
 }
 
 body {
-    min-height: 100vh;
+    height: 100vh;
     background-color: $green;
   
     main {
-        min-height: inherit;
-        width: inherit;
+        height: inherit;
         padding: 1.875rem;
     }
 }
@@ -36,4 +37,30 @@ h1 {
     color: $white;
     font-family: 'Pacifico', cursive;
     text-shadow: 0.0625rem 0.156rem 0.156rem $box-shadow-grey;
+}
+
+//mixins 
+@mixin input-field {
+    width: 100%;
+    border-radius: 0.625rem;
+    border: 0.0625rem solid $box-shadow-light-grey;
+    outline: none;
+    padding: 0.625rem;
+    &:focus {
+        box-shadow: 0.09375rem 0.09375rem 0.1875rem $box-shadow-light-grey;
+    }
+}
+
+$breakpoints: (
+    'small': '36rem', // ≥576px
+    'medium': '48rem', // ≥768px
+    'large': '62rem', // ≥992p
+    'x-large': '75rem', // ≥1200px
+    'xx-large': '87.5rem', // ≥1400px
+);
+
+@mixin breakpoint($size) {
+	@media (min-width: map-get($breakpoints, $size)) {
+		@content;
+	}
 }

@@ -35,12 +35,11 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   background-color: rgb(3, 105, 63);
 }
 body main {
-  min-height: inherit;
-  width: inherit;
+  height: inherit;
   padding: 1.875rem;
 }
 
@@ -57,11 +56,11 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-.flex-col__gap50 {
-  gap: 5.625rem;
-}
 .flex-col__gap20 {
   gap: 1.25rem;
+}
+.flex-col__gap50 {
+  gap: 5.625rem;
 }
 .flex-col__gap70 {
   gap: 4.375rem;
@@ -108,7 +107,65 @@ h1 {
 .white-patch .search-button:hover {
   background-color: rgba(3, 105, 63, 0.658);
   cursor: pointer;
-}`, "",{"version":3,"sources":["webpack://./src/sass/_base.scss","webpack://./src/sass/main.scss","webpack://./src/sass/_layout.scss","webpack://./src/sass/_components.scss"],"names":[],"mappings":"AAUA;EACI,sBAAA;EACA,SAAA;EACA,UAAA;EACA,kCAAA;ACPJ;;ADUA;EACI,eAAA;ACPJ;;ADUA;EACI,iBAAA;EACA,iCAnBI;ACYR;ADSI;EACI,mBAAA;EACA,cAAA;EACA,iBAAA;ACPR;;ADYA;EACI,eAAA;EACA,YA7BI;EA8BJ,gCAAA;EACA,wDAAA;ACTJ;;AC5BA;EACI,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;AD+BJ;AC7BI;EACI,aAAA;AD+BR;AC7BI;EACI,YAAA;AD+BR;AC7BI;EACI,aAAA;AD+BR;;AE5CA;EACI,WAAA;EACA,mBAAA;EACA,uBAAA;EACA,uBHEI;EGDJ,iBAAA;AF+CJ;AE7CI;EACI,kBAAA;EACA,eAAA;EACA,sBHNA;EGOA,gBAAA;AF+CR;AE5CI;EACI,cAAA;EACA,eAAA;EACA,uCAAA;EACA,sBAAA;EACA,eAAA;AF8CR;AE5CQ;EACI,+CAAA;AF8CZ;AE3CQ;EACI,mBAAA;EACA,gBAAA;EACA,sBHxBJ;ACqER;AEzCI;EACI,aAAA;EACA,gBAAA;EACA,eAAA;EACA,gBAAA;EACA,YH/BA;EGgCA,iCHlCA;EGmCA,YAAA;EACA,uBAAA;AF2CR;AEzCQ;EACI,yCHtCQ;EGuCR,eAAA;AF2CZ","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');\r\n@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');\r\n\r\n//Colors\r\n$green: rgb(3, 105, 63);\r\n$green-transparent: rgba(3, 105, 63, 0.658);\r\n$white: white;\r\n$box-shadow-grey: rgb(88, 85, 85);\r\n\r\n//Reset\r\n* {\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n    font-family: 'Manrope', sans-serif;\r\n}\r\n\r\nhtml {\r\n    font-size: 100%;\r\n}\r\n\r\nbody {\r\n    min-height: 100vh;\r\n    background-color: $green;\r\n  \r\n    main {\r\n        min-height: inherit;\r\n        width: inherit;\r\n        padding: 1.875rem;\r\n    }\r\n}\r\n\r\n//Typography\r\nh1 {\r\n    font-size: 2rem;\r\n    color: $white;\r\n    font-family: 'Pacifico', cursive;\r\n    text-shadow: 0.0625rem 0.156rem 0.156rem $box-shadow-grey;\r\n}\r\n","@import url(\"https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap\");\n@import url(\"https://fonts.googleapis.com/css2?family=Pacifico&display=swap\");\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-family: \"Manrope\", sans-serif;\n}\n\nhtml {\n  font-size: 100%;\n}\n\nbody {\n  min-height: 100vh;\n  background-color: rgb(3, 105, 63);\n}\nbody main {\n  min-height: inherit;\n  width: inherit;\n  padding: 1.875rem;\n}\n\nh1 {\n  font-size: 2rem;\n  color: white;\n  font-family: \"Pacifico\", cursive;\n  text-shadow: 0.0625rem 0.156rem 0.156rem rgb(88, 85, 85);\n}\n\n.flex-col {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n.flex-col__gap50 {\n  gap: 5.625rem;\n}\n.flex-col__gap20 {\n  gap: 1.25rem;\n}\n.flex-col__gap70 {\n  gap: 4.375rem;\n}\n\n.white-patch {\n  width: 100%;\n  max-width: 31.25rem;\n  border-radius: 1.875rem;\n  background-color: white;\n  padding: 1.875rem;\n}\n.white-patch .create-icon-label {\n  text-align: center;\n  font-size: 1rem;\n  color: rgb(3, 105, 63);\n  font-weight: 500;\n}\n.white-patch .create-icon {\n  width: 6.25rem;\n  height: 6.25rem;\n  border: 0.156rem dashed rgb(3, 105, 63);\n  border-radius: 6.25rem;\n  cursor: pointer;\n}\n.white-patch .create-icon:hover {\n  border: 0.156rem dashed rgba(3, 105, 63, 0.658);\n}\n.white-patch .create-icon__cross {\n  font-size: 2.125rem;\n  font-weight: 500;\n  color: rgb(3, 105, 63);\n}\n.white-patch .search-button {\n  width: 7.5rem;\n  height: 3.125rem;\n  font-size: 1rem;\n  font-weight: 600;\n  color: white;\n  background-color: rgb(3, 105, 63);\n  border: none;\n  border-radius: 1.625rem;\n}\n.white-patch .search-button:hover {\n  background-color: rgba(3, 105, 63, 0.658);\n  cursor: pointer;\n}",".flex-col{\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    &__gap50 {\r\n        gap: 5.625rem;\r\n    }\r\n    &__gap20 {\r\n        gap: 1.25rem;\r\n    }\r\n    &__gap70 {\r\n        gap: 4.375rem;\r\n    }\r\n}",".white-patch {\r\n    width: 100%;\r\n    max-width: 31.25rem;\r\n    border-radius: 1.875rem;\r\n    background-color: $white;\r\n    padding: 1.875rem;\r\n\r\n    .create-icon-label {\r\n        text-align: center;\r\n        font-size: 1rem;\r\n        color: $green;\r\n        font-weight: 500;\r\n    }\r\n    \r\n    .create-icon {\r\n        width: 6.25rem;\r\n        height: 6.25rem;\r\n        border: 0.156rem dashed $green;\r\n        border-radius: 6.25rem;\r\n        cursor: pointer;\r\n\r\n        &:hover{\r\n            border: 0.156rem dashed $green-transparent;\r\n        }\r\n\r\n        &__cross {\r\n            font-size: 2.125rem;\r\n            font-weight: 500;\r\n            color: $green;\r\n        }\r\n    }\r\n      \r\n    .search-button {\r\n        width: 7.5rem;\r\n        height: 3.125rem;\r\n        font-size: 1rem;\r\n        font-weight: 600;\r\n        color: $white;\r\n        background-color: $green;\r\n        border: none;\r\n        border-radius: 1.625rem;\r\n\r\n        &:hover {\r\n            background-color: $green-transparent;\r\n            cursor: pointer;\r\n        }\r\n    }\r\n}\r\n\r\n"],"sourceRoot":""}]);
+}
+
+.window {
+  height: 90%;
+  width: 100%;
+  max-width: 31.25rem;
+  background-color: white;
+  border-radius: 0.625rem;
+  position: relative;
+}
+@media (min-width: 36rem) {
+  .window {
+    height: 100%;
+  }
+}
+.window__close-cross {
+  color: rgb(95, 93, 93);
+  font-size: 1.25rem;
+  position: absolute;
+  top: 0.3125rem;
+  right: 0.75rem;
+  font-family: monospace;
+  color: rgb(95, 93, 93);
+}
+.window__close-cross:hover {
+  color: lightgreen;
+  cursor: pointer;
+}
+
+.writing-area {
+  height: 90%;
+  width: 85%;
+  margin-top: 0.625rem;
+}
+.writing-area_title {
+  width: 100%;
+  border-radius: 0.625rem;
+  border: 0.0625rem solid rgba(146, 144, 144, 0.603);
+  outline: none;
+  padding: 0.625rem;
+  height: 10%;
+  margin-bottom: 0.9375rem;
+  font-weight: 600;
+}
+.writing-area_title:focus {
+  box-shadow: 0.09375rem 0.09375rem 0.1875rem rgba(146, 144, 144, 0.603);
+}
+.writing-area_text {
+  width: 100%;
+  border-radius: 0.625rem;
+  border: 0.0625rem solid rgba(146, 144, 144, 0.603);
+  outline: none;
+  padding: 0.625rem;
+  height: 100%;
+  font-weight: 500;
+}
+.writing-area_text:focus {
+  box-shadow: 0.09375rem 0.09375rem 0.1875rem rgba(146, 144, 144, 0.603);
+}`, "",{"version":3,"sources":["webpack://./src/sass/_base.scss","webpack://./src/sass/main.scss","webpack://./src/sass/_layout.scss","webpack://./src/sass/_components.scss"],"names":[],"mappings":"AAYA;EACI,sBAAA;EACA,SAAA;EACA,UAAA;EACA,kCAAA;ACTJ;;ADYA;EACI,eAAA;ACTJ;;ADYA;EACI,aAAA;EACA,iCArBI;ACYR;ADWI;EACI,eAAA;EACA,iBAAA;ACTR;;ADcA;EACI,eAAA;EACA,YA9BI;EA+BJ,gCAAA;EACA,wDAAA;ACXJ;;AC3BA;EACI,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;AD8BJ;AC5BI;EACI,YAAA;AD8BR;AC3BI;EACI,aAAA;AD6BR;AC1BI;EACI,aAAA;AD4BR;;AE3CA;EACI,WAAA;EACA,mBAAA;EACA,uBAAA;EACA,uBHEI;EGDJ,iBAAA;AF8CJ;AE5CI;EACI,kBAAA;EACA,eAAA;EACA,sBHNA;EGOA,gBAAA;AF8CR;AE3CI;EACI,cAAA;EACA,eAAA;EACA,uCAAA;EACA,sBAAA;EACA,eAAA;AF6CR;AE3CQ;EACI,+CAAA;AF6CZ;AE1CQ;EACI,mBAAA;EACA,gBAAA;EACA,sBHxBJ;ACoER;AExCI;EACI,aAAA;EACA,gBAAA;EACA,eAAA;EACA,gBAAA;EACA,YH/BA;EGgCA,iCHlCA;EGmCA,YAAA;EACA,uBAAA;AF0CR;AExCQ;EACI,yCHtCQ;EGuCR,eAAA;AF0CZ;;AErCA;EACI,WAAA;EACA,WAAA;EACA,mBAAA;EACA,uBH/CI;EGgDJ,uBAAA;EACA,kBAAA;AFwCJ;ADjCC;EGbD;IAQQ,YAAA;EF0CN;AACF;AExCI;EACI,sBHpDI;EGqDJ,kBAAA;EACA,kBAAA;EACA,cAAA;EACA,cAAA;EACA,sBAAA;EACA,sBH1DI;ACoGZ;AEzCQ;EACI,iBAAA;EACA,eAAA;AF2CZ;;AEtCA;EACI,WAAA;EACA,UAAA;EACA,oBAAA;AFyCJ;AEvCI;EHrCA,WAAA;EACA,uBAAA;EACA,kDAAA;EACA,aAAA;EACA,iBAAA;EGmCI,WAAA;EACA,wBAAA;EACA,gBAAA;AF6CR;ADjFI;EACI,sEAAA;ACmFR;AE7CI;EH5CA,WAAA;EACA,uBAAA;EACA,kDAAA;EACA,aAAA;EACA,iBAAA;EG0CI,YAAA;EACA,gBAAA;AFmDR;AD7FI;EACI,sEAAA;AC+FR","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');\r\n@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');\r\n\r\n//Colors\r\n$green: rgb(3, 105, 63);\r\n$green-transparent: rgba(3, 105, 63, 0.658);\r\n$white: white;\r\n$box-shadow-grey: rgb(88, 85, 85);\r\n$box-shadow-light-grey: rgba(146, 144, 144, 0.603);\r\n$dark-grey: rgb(95, 93, 93);\r\n\r\n//Reset\r\n* {\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n    font-family: 'Manrope', sans-serif;\r\n}\r\n\r\nhtml {\r\n    font-size: 100%;\r\n}\r\n\r\nbody {\r\n    height: 100vh;\r\n    background-color: $green;\r\n  \r\n    main {\r\n        height: inherit;\r\n        padding: 1.875rem;\r\n    }\r\n}\r\n\r\n//Typography\r\nh1 {\r\n    font-size: 2rem;\r\n    color: $white;\r\n    font-family: 'Pacifico', cursive;\r\n    text-shadow: 0.0625rem 0.156rem 0.156rem $box-shadow-grey;\r\n}\r\n\r\n//mixins \r\n@mixin input-field {\r\n    width: 100%;\r\n    border-radius: 0.625rem;\r\n    border: 0.0625rem solid $box-shadow-light-grey;\r\n    outline: none;\r\n    padding: 0.625rem;\r\n    &:focus {\r\n        box-shadow: 0.09375rem 0.09375rem 0.1875rem $box-shadow-light-grey;\r\n    }\r\n}\r\n\r\n$breakpoints: (\r\n    'small': '36rem', // ≥576px\r\n    'medium': '48rem', // ≥768px\r\n    'large': '62rem', // ≥992p\r\n    'x-large': '75rem', // ≥1200px\r\n    'xx-large': '87.5rem', // ≥1400px\r\n);\r\n\r\n@mixin breakpoint($size) {\r\n\t@media (min-width: map-get($breakpoints, $size)) {\r\n\t\t@content;\r\n\t}\r\n}","@import url(\"https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap\");\n@import url(\"https://fonts.googleapis.com/css2?family=Pacifico&display=swap\");\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-family: \"Manrope\", sans-serif;\n}\n\nhtml {\n  font-size: 100%;\n}\n\nbody {\n  height: 100vh;\n  background-color: rgb(3, 105, 63);\n}\nbody main {\n  height: inherit;\n  padding: 1.875rem;\n}\n\nh1 {\n  font-size: 2rem;\n  color: white;\n  font-family: \"Pacifico\", cursive;\n  text-shadow: 0.0625rem 0.156rem 0.156rem rgb(88, 85, 85);\n}\n\n.flex-col {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n.flex-col__gap20 {\n  gap: 1.25rem;\n}\n.flex-col__gap50 {\n  gap: 5.625rem;\n}\n.flex-col__gap70 {\n  gap: 4.375rem;\n}\n\n.white-patch {\n  width: 100%;\n  max-width: 31.25rem;\n  border-radius: 1.875rem;\n  background-color: white;\n  padding: 1.875rem;\n}\n.white-patch .create-icon-label {\n  text-align: center;\n  font-size: 1rem;\n  color: rgb(3, 105, 63);\n  font-weight: 500;\n}\n.white-patch .create-icon {\n  width: 6.25rem;\n  height: 6.25rem;\n  border: 0.156rem dashed rgb(3, 105, 63);\n  border-radius: 6.25rem;\n  cursor: pointer;\n}\n.white-patch .create-icon:hover {\n  border: 0.156rem dashed rgba(3, 105, 63, 0.658);\n}\n.white-patch .create-icon__cross {\n  font-size: 2.125rem;\n  font-weight: 500;\n  color: rgb(3, 105, 63);\n}\n.white-patch .search-button {\n  width: 7.5rem;\n  height: 3.125rem;\n  font-size: 1rem;\n  font-weight: 600;\n  color: white;\n  background-color: rgb(3, 105, 63);\n  border: none;\n  border-radius: 1.625rem;\n}\n.white-patch .search-button:hover {\n  background-color: rgba(3, 105, 63, 0.658);\n  cursor: pointer;\n}\n\n.window {\n  height: 90%;\n  width: 100%;\n  max-width: 31.25rem;\n  background-color: white;\n  border-radius: 0.625rem;\n  position: relative;\n}\n@media (min-width: 36rem) {\n  .window {\n    height: 100%;\n  }\n}\n.window__close-cross {\n  color: rgb(95, 93, 93);\n  font-size: 1.25rem;\n  position: absolute;\n  top: 0.3125rem;\n  right: 0.75rem;\n  font-family: monospace;\n  color: rgb(95, 93, 93);\n}\n.window__close-cross:hover {\n  color: lightgreen;\n  cursor: pointer;\n}\n\n.writing-area {\n  height: 90%;\n  width: 85%;\n  margin-top: 0.625rem;\n}\n.writing-area_title {\n  width: 100%;\n  border-radius: 0.625rem;\n  border: 0.0625rem solid rgba(146, 144, 144, 0.603);\n  outline: none;\n  padding: 0.625rem;\n  height: 10%;\n  margin-bottom: 0.9375rem;\n  font-weight: 600;\n}\n.writing-area_title:focus {\n  box-shadow: 0.09375rem 0.09375rem 0.1875rem rgba(146, 144, 144, 0.603);\n}\n.writing-area_text {\n  width: 100%;\n  border-radius: 0.625rem;\n  border: 0.0625rem solid rgba(146, 144, 144, 0.603);\n  outline: none;\n  padding: 0.625rem;\n  height: 100%;\n  font-weight: 500;\n}\n.writing-area_text:focus {\n  box-shadow: 0.09375rem 0.09375rem 0.1875rem rgba(146, 144, 144, 0.603);\n}",".flex-col{\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    \r\n    &__gap20 {\r\n        gap: 1.25rem;\r\n    }\r\n\r\n    &__gap50 {\r\n        gap: 5.625rem;\r\n    }\r\n\r\n    &__gap70 {\r\n        gap: 4.375rem;\r\n    }\r\n}",".white-patch {\r\n    width: 100%;\r\n    max-width: 31.25rem;\r\n    border-radius: 1.875rem;\r\n    background-color: $white;\r\n    padding: 1.875rem;\r\n\r\n    .create-icon-label {\r\n        text-align: center;\r\n        font-size: 1rem;\r\n        color: $green;\r\n        font-weight: 500;\r\n    }\r\n    \r\n    .create-icon {\r\n        width: 6.25rem;\r\n        height: 6.25rem;\r\n        border: 0.156rem dashed $green;\r\n        border-radius: 6.25rem;\r\n        cursor: pointer;\r\n\r\n        &:hover{\r\n            border: 0.156rem dashed $green-transparent;\r\n        }\r\n\r\n        &__cross {\r\n            font-size: 2.125rem;\r\n            font-weight: 500;\r\n            color: $green;\r\n        }\r\n    }\r\n      \r\n    .search-button {\r\n        width: 7.5rem;\r\n        height: 3.125rem;\r\n        font-size: 1rem;\r\n        font-weight: 600;\r\n        color: $white;\r\n        background-color: $green;\r\n        border: none;\r\n        border-radius: 1.625rem;\r\n\r\n        &:hover {\r\n            background-color: $green-transparent;\r\n            cursor: pointer;\r\n        }\r\n    }\r\n}\r\n\r\n.window {\r\n    height: 90%;\r\n    width: 100%;\r\n    max-width: 31.25rem;\r\n    background-color: $white;\r\n    border-radius: 0.625rem;\r\n    position: relative;\r\n    @include breakpoint(small) {\r\n        height: 100%;\r\n    }\r\n    \r\n    &__close-cross {\r\n        color: $dark-grey;\r\n        font-size: 1.25rem;\r\n        position: absolute;\r\n        top: 0.3125rem;\r\n        right: 0.75rem;\r\n        font-family: monospace;\r\n        color: $dark-grey;\r\n        &:hover {\r\n            color: lightgreen;\r\n            cursor: pointer;\r\n        }\r\n    }\r\n}\r\n\r\n.writing-area {\r\n    height: 90%;\r\n    width: 85%;\r\n    margin-top: 0.625rem;\r\n\r\n    &_title {\r\n        @include input-field;\r\n        height: 10%;\r\n        margin-bottom: 0.9375rem;\r\n        font-weight: 600;\r\n    }\r\n\r\n    &_text {\r\n        @include input-field;\r\n        height: 100%;\r\n        font-weight: 500;\r\n    }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -555,19 +612,35 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ "./src/js/note.js":
-/*!************************!*\
-  !*** ./src/js/note.js ***!
-  \************************/
+/***/ "./src/js/writing-window.js":
+/*!**********************************!*\
+  !*** ./src/js/writing-window.js ***!
+  \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Note: () => (/* binding */ Note)
+/* harmony export */   WritingWindow: () => (/* binding */ WritingWindow)
 /* harmony export */ });
-class Note {
-
+class WritingWindow {
+    constructor(title, text) {
+        this.title = title;
+        this.text = text;
+    }
+    static displayWritingWindow() {
+        const rootElement = document.getElementById('page-container');
+        rootElement.innerHTML = `
+        <div id="writing-window" class="window flex-col">
+            <span id="close-window-cross" class="window__close-cross">x</span>
+            <form id="writing-area" class="writing-area flex-col">
+                <input id="writing-area_title" class="writing-area_title" type="text" autocomplete="off" placeholder="Enter title ...">
+                <textarea id="writing-area_text" class="writing-area_text" name="writing-area_text" placeholder="Enter text..." ></textarea>
+            </form>
+        </div>
+        `
+    }
 }
+
 
 /***/ })
 
@@ -652,8 +725,7 @@ var __webpack_exports__ = {};
   \*********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sass/main.scss */ "./src/sass/main.scss");
-/* harmony import */ var _js_note_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/note.js */ "./src/js/note.js");
-
+/* harmony import */ var _js_writing_window_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/writing-window.js */ "./src/js/writing-window.js");
 
 
 
@@ -676,6 +748,7 @@ class App {
             <button id='search-button' class='search-button' type='button'>Search</button>
         </div>
         `
+       document.getElementById('create-icon').addEventListener('click', _js_writing_window_js__WEBPACK_IMPORTED_MODULE_1__.WritingWindow.displayWritingWindow);
     }
 }
 
@@ -687,4 +760,4 @@ new App('page-container')
 
 /******/ })()
 ;
-//# sourceMappingURL=326bee02b4303ce5dd4e.js.map
+//# sourceMappingURL=db4412f05a91c39169a3.js.map

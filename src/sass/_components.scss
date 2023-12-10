@@ -47,3 +47,47 @@
     }
 }
 
+.window {
+    height: 90%;
+    width: 100%;
+    max-width: 31.25rem;
+    background-color: $white;
+    border-radius: 0.625rem;
+    position: relative;
+    @include breakpoint(small) {
+        height: 100%;
+    }
+    
+    &__close-cross {
+        color: $dark-grey;
+        font-size: 1.25rem;
+        position: absolute;
+        top: 0.3125rem;
+        right: 0.75rem;
+        font-family: monospace;
+        color: $dark-grey;
+        &:hover {
+            color: lightgreen;
+            cursor: pointer;
+        }
+    }
+}
+
+.writing-area {
+    height: 90%;
+    width: 85%;
+    margin-top: 0.625rem;
+
+    &_title {
+        @include input-field;
+        height: 10%;
+        margin-bottom: 0.9375rem;
+        font-weight: 600;
+    }
+
+    &_text {
+        @include input-field;
+        height: 100%;
+        font-weight: 500;
+    }
+}

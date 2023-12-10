@@ -36,7 +36,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'My note Manager',
+            title: 'My Note Handler',
             filename: 'index.html',
             template: './src/template.html'
         }),
