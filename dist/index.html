@@ -3,11 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My note Manager</title>
-<script defer src="db4412f05a91c39169a3.js"></script></head>
+    <title>My Note Handler</title>
+<script defer src="07157e086e248cc0ec62.js"></script></head>
 <body>
     <main id="page-container" class="flex-col flex-col__gap50 ">
-      
+        <h1 id='app-title'>My Note Handler</h1>
+        <div id='white-patch'class='white-patch flex-col flex-col__gap70'>
+            <form id="search">
+                <input id="search-field" class="search-field" type="text" autocomplete="off" placeholder="Search by keyword ...">
+                <button id="search-button" class="search-button" type="button">-></button>
+            </form>
+            <div id='create-icon-group' class='create-icon-group flex-col flex-col__gap20'>
+                <p id='create-icon-label' class='create-icon-label'>Create note</p>
+                <div id='create-icon' class='create-icon flex-col'>
+                    <div class='create-icon__cross'>+</div>
+                </div>
+            </div>
+            <button id='view-button' class='view-button' type='button'>View all</button>
+        </div>
     </main>
 </body>
 </html>

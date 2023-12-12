@@ -2,12 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 //Colors
-$green: rgb(3, 105, 63);
-$green-transparent: rgba(3, 105, 63, 0.658);
+$purple: rgb(30, 46, 77);
+$purple-transparent: rgba(30, 46, 77, 0.589);
 $white: white;
 $box-shadow-grey: rgb(88, 85, 85);
 $box-shadow-light-grey: rgba(146, 144, 144, 0.603);
 $dark-grey: rgb(95, 93, 93);
+$light-purple: rgb(47, 69, 114);
 
 //Reset
 * {
@@ -22,11 +23,12 @@ html {
 }
 
 body {
-    height: 100vh;
-    background-color: $green;
-  
+    min-height: 100vh;
+    background-color: $purple;
+    position: relative;
+
     main {
-        height: inherit;
+        min-height: inherit;
         padding: 1.875rem;
     }
 }
@@ -37,6 +39,19 @@ h1 {
     color: $white;
     font-family: 'Pacifico', cursive;
     text-shadow: 0.0625rem 0.156rem 0.156rem $box-shadow-grey;
+}
+
+button {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $white;
+    background-color: $purple;
+    border: none;
+}
+
+button:hover {
+    background-color: $purple-transparent;
+    cursor: pointer;
 }
 
 //mixins 
@@ -64,3 +79,13 @@ $breakpoints: (
 		@content;
 	}
 }
+
+//animations
+@keyframes fade-slide-in {
+    from {
+      transform: translateY(-5rem);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }

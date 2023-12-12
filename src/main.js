@@ -1,29 +1,35 @@
 import './sass/main.scss'
-import {WritingWindow } from './js/writing-window.js'
+import { WritingWindow } from './js/writing-window.js'
+
 
 class App {
-    constructor(rootElement) {
+    init() {
+        document.getElementById('create-icon').addEventListener('click', WritingWindow.displayWindow);
+    }
+    /* constructor(rootElement) {
         this.rootElement = rootElement
         this.renderHomePage(this.rootElement);
-    }
-    renderHomePage(rootElementId) {
+    } */
+    
+   /*  renderHomePage(rootElementId) {
         const rootElement = document.getElementById(`${rootElementId}`)
         rootElement.innerHTML = `
         <h1 id='app-title'>My Note Handler</h1>
         <div id='white-patch'class='white-patch flex-col flex-col__gap70'>
             <div id='create-icon-group' class='create-icon-group flex-col flex-col__gap20'>
-                <p id='create-icon-label' class='create-icon-label'>Create</p>
+                <p id='create-icon-label' class='create-icon-label'>Create note</p>
                 <div id='create-icon' class='create-icon flex-col'>
                     <div class='create-icon__cross'>+</div>
                 </div>
             </div>
-            <button id='search-button' class='search-button' type='button'>Search</button>
+            <button id='search-button' class='search-button' type='button'>View all</button>
         </div>
         `
-       document.getElementById('create-icon').addEventListener('click', WritingWindow.displayWritingWindow);
-    }
+       document.getElementById('create-icon').addEventListener('click', WritingWindow.displayWindow);
+    } */
 }
 
-new App('page-container')
+const app = new App();
+app.init();
 
 
