@@ -12,6 +12,9 @@
         height: 3.125rem;
         border-radius: 1.875rem;
         margin-right: 0.3125rem;
+        &:focus {
+            border: 0.0625rem solid $dark-grey;
+        }
     }
     
     .search-button {
@@ -90,13 +93,14 @@
             cursor: pointer;
         }
     }
-}
 
-.save-button {
-    height: 3.125rem;
-    width: 5rem;
-    border-radius: 0.9375rem;
-    font-size: 0.875rem;
+    .save-button {
+        height: 3.125rem;
+        width: 5rem;
+        border-radius: 1.125rem;
+        font-size: 0.875rem;
+        outline: none;
+    }
 }
 
 .writing-area {

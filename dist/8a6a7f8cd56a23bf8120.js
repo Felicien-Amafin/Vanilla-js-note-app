@@ -103,6 +103,9 @@ button:hover {
   border-radius: 1.875rem;
   margin-right: 0.3125rem;
 }
+.white-patch .search-field:focus {
+  border: 0.0625rem solid rgb(95, 93, 93);
+}
 .white-patch .search-button {
   font-size: 0.875rem;
   width: 4.375rem;
@@ -174,12 +177,12 @@ button:hover {
   color: rgba(30, 46, 77, 0.589);
   cursor: pointer;
 }
-
-.save-button {
+.window .save-button {
   height: 3.125rem;
   width: 5rem;
-  border-radius: 0.9375rem;
+  border-radius: 1.125rem;
   font-size: 0.875rem;
+  outline: none;
 }
 
 .writing-area {
@@ -212,7 +215,7 @@ button:hover {
 }
 .writing-area_text:focus {
   box-shadow: 0.09375rem 0.09375rem 0.1875rem rgba(146, 144, 144, 0.603);
-}`, "",{"version":3,"sources":["webpack://./src/sass/_base.scss","webpack://./src/sass/main.scss","webpack://./src/sass/_layout.scss","webpack://./src/sass/_components.scss"],"names":[],"mappings":"AAaA;EACI,sBAAA;EACA,SAAA;EACA,UAAA;EACA,kCAAA;ACVJ;;ADaA;EACI,eAAA;ACVJ;;ADaA;EACI,iBAAA;EACA,iCAtBK;EAuBL,kBAAA;ACVJ;ADYI;EACI,mBAAA;EACA,iBAAA;ACVR;;ADeA;EACI,eAAA;EACA,YAhCI;EAiCJ,gCAAA;EACA,wDAAA;ACZJ;;ADeA;EACI,eAAA;EACA,gBAAA;EACA,YAxCI;EAyCJ,iCA3CK;EA4CL,YAAA;ACZJ;;ADeA;EACI,yCA/CiB;EAgDjB,eAAA;ACZJ;;AD0CA;EACI;IACE,4BAAA;ECvCJ;EDyCE;IACE,wBAAA;ECvCJ;AACF;AClDA;EACI,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;ADoDJ;AClDI;EACI,YAAA;ADoDR;ACjDI;EACI,aAAA;ADmDR;AChDI;EACI,aAAA;ADkDR;;AEjEA;EACI,WAAA;EACA,mBAAA;EACA,uBAAA;EACA,uBHEI;EGDJ,iBAAA;AFoEJ;AElEI;EACI,kDAAA;EACA,aAAA;EACA,iBAAA;EACA,gBAAA;EACA,uBAAA;EACA,uBAAA;AFoER;AEjEI;EACI,mBAAA;EACA,eAAA;EACA,cAAA;EACA,aAAA;EACA,sBAAA;AFmER;AEhEI;EACI,kBAAA;EACA,eAAA;EACA,sBHvBC;EGwBD,gBAAA;AFkER;AE/DI;EACI,cAAA;EACA,eAAA;EACA,uCAAA;EACA,sBAAA;EACA,eAAA;AFiER;AE/DQ;EACI,+CAAA;AFiEZ;AE9DQ;EACI,mBAAA;EACA,gBAAA;EACA,sBHzCH;ACyGT;AE5DI;EACI,aAAA;EACA,gBAAA;EACA,uBAAA;AF8DR;;AE1DA;EACI,mBAAA;EACA,WAAA;EACA,gBAAA;EACA,kBAAA;EACA,MAAA;EACA,aAAA;EACA,kCHrDW;ACkHf;;AE1DA;EACI,YAAA;EACA,WAAA;EACA,mBAAA;EACA,uBHhEI;EGiEJ,uBAAA;EACA,kBAAA;EACA,+CAAA;AF6DJ;ADzDC;EGXD;IAUQ,YAAA;EF8DN;AACF;AE5DI;EACI,sBHvEI;EGwEJ,kBAAA;EACA,kBAAA;EACA,cAAA;EACA,cAAA;EACA,sBAAA;EACA,sBH7EI;AC2IZ;AE7DQ;EACI,8BHnFS;EGoFT,eAAA;AF+DZ;;AE1DA;EACI,gBAAA;EACA,WAAA;EACA,wBAAA;EACA,mBAAA;AF6DJ;;AE1DA;EACI,WAAA;EACA,UAAA;EACA,oBAAA;AF6DJ;AE3DI;EHhDA,WAAA;EACA,uBAAA;EACA,kDAAA;EACA,aAAA;EACA,iBAAA;EG8CI,WAAA;EACA,wBAAA;EACA,gBAAA;AFiER;ADhHI;EACI,sEAAA;ACkHR;AEjEI;EHvDA,WAAA;EACA,uBAAA;EACA,kDAAA;EACA,aAAA;EACA,iBAAA;EGqDI,YAAA;EACA,gBAAA;EACA,wBAAA;AFuER;AD7HI;EACI,sEAAA;AC+HR","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');\r\n@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');\r\n\r\n//Colors\r\n$purple: rgb(30, 46, 77);\r\n$purple-transparent: rgba(30, 46, 77, 0.589);\r\n$white: white;\r\n$box-shadow-grey: rgb(88, 85, 85);\r\n$box-shadow-light-grey: rgba(146, 144, 144, 0.603);\r\n$dark-grey: rgb(95, 93, 93);\r\n$light-purple: rgb(47, 69, 114);\r\n\r\n//Reset\r\n* {\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n    font-family: 'Manrope', sans-serif;\r\n}\r\n\r\nhtml {\r\n    font-size: 100%;\r\n}\r\n\r\nbody {\r\n    min-height: 100vh;\r\n    background-color: $purple;\r\n    position: relative;\r\n\r\n    main {\r\n        min-height: inherit;\r\n        padding: 1.875rem;\r\n    }\r\n}\r\n\r\n//Typography\r\nh1 {\r\n    font-size: 2rem;\r\n    color: $white;\r\n    font-family: 'Pacifico', cursive;\r\n    text-shadow: 0.0625rem 0.156rem 0.156rem $box-shadow-grey;\r\n}\r\n\r\nbutton {\r\n    font-size: 1rem;\r\n    font-weight: 600;\r\n    color: $white;\r\n    background-color: $purple;\r\n    border: none;\r\n}\r\n\r\nbutton:hover {\r\n    background-color: $purple-transparent;\r\n    cursor: pointer;\r\n}\r\n\r\n//mixins \r\n@mixin input-field {\r\n    width: 100%;\r\n    border-radius: 0.625rem;\r\n    border: 0.0625rem solid $box-shadow-light-grey;\r\n    outline: none;\r\n    padding: 0.625rem;\r\n    &:focus {\r\n        box-shadow: 0.09375rem 0.09375rem 0.1875rem $box-shadow-light-grey;\r\n    }\r\n}\r\n\r\n$breakpoints: (\r\n    'small': '36rem', // ≥576px\r\n    'medium': '48rem', // ≥768px\r\n    'large': '62rem', // ≥992p\r\n    'x-large': '75rem', // ≥1200px\r\n    'xx-large': '87.5rem', // ≥1400px\r\n);\r\n\r\n@mixin breakpoint($size) {\r\n\t@media (min-width: map-get($breakpoints, $size)) {\r\n\t\t@content;\r\n\t}\r\n}\r\n\r\n//animations\r\n@keyframes fade-slide-in {\r\n    from {\r\n      transform: translateY(-5rem);\r\n    }\r\n    to {\r\n      transform: translateY(0);\r\n    }\r\n  }","@import url(\"https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap\");\n@import url(\"https://fonts.googleapis.com/css2?family=Pacifico&display=swap\");\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-family: \"Manrope\", sans-serif;\n}\n\nhtml {\n  font-size: 100%;\n}\n\nbody {\n  min-height: 100vh;\n  background-color: rgb(30, 46, 77);\n  position: relative;\n}\nbody main {\n  min-height: inherit;\n  padding: 1.875rem;\n}\n\nh1 {\n  font-size: 2rem;\n  color: white;\n  font-family: \"Pacifico\", cursive;\n  text-shadow: 0.0625rem 0.156rem 0.156rem rgb(88, 85, 85);\n}\n\nbutton {\n  font-size: 1rem;\n  font-weight: 600;\n  color: white;\n  background-color: rgb(30, 46, 77);\n  border: none;\n}\n\nbutton:hover {\n  background-color: rgba(30, 46, 77, 0.589);\n  cursor: pointer;\n}\n\n@keyframes fade-slide-in {\n  from {\n    transform: translateY(-5rem);\n  }\n  to {\n    transform: translateY(0);\n  }\n}\n.flex-col {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n.flex-col__gap20 {\n  gap: 1.25rem;\n}\n.flex-col__gap50 {\n  gap: 5.625rem;\n}\n.flex-col__gap70 {\n  gap: 4.375rem;\n}\n\n.white-patch {\n  width: 100%;\n  max-width: 31.25rem;\n  border-radius: 1.875rem;\n  background-color: white;\n  padding: 1.875rem;\n}\n.white-patch .search-field {\n  border: 0.0625rem solid rgba(146, 144, 144, 0.603);\n  outline: none;\n  padding: 0.875rem;\n  height: 3.125rem;\n  border-radius: 1.875rem;\n  margin-right: 0.3125rem;\n}\n.white-patch .search-button {\n  font-size: 0.875rem;\n  width: 4.375rem;\n  height: 2.5rem;\n  width: 2.5rem;\n  border-radius: 6.25rem;\n}\n.white-patch .create-icon-label {\n  text-align: center;\n  font-size: 1rem;\n  color: rgb(30, 46, 77);\n  font-weight: 500;\n}\n.white-patch .create-icon {\n  width: 6.25rem;\n  height: 6.25rem;\n  border: 0.156rem dashed rgb(30, 46, 77);\n  border-radius: 6.25rem;\n  cursor: pointer;\n}\n.white-patch .create-icon:hover {\n  border: 0.156rem dashed rgba(30, 46, 77, 0.589);\n}\n.white-patch .create-icon__cross {\n  font-size: 2.125rem;\n  font-weight: 500;\n  color: rgb(30, 46, 77);\n}\n.white-patch .view-button {\n  width: 7.5rem;\n  height: 3.125rem;\n  border-radius: 1.625rem;\n}\n\n.overlay {\n  min-height: inherit;\n  width: 100%;\n  padding: 1.25rem;\n  position: absolute;\n  top: 0;\n  z-index: 2000;\n  background-color: rgb(47, 69, 114);\n}\n\n.window {\n  height: 80vh;\n  width: 100%;\n  max-width: 31.25rem;\n  background-color: white;\n  border-radius: 0.625rem;\n  position: relative;\n  animation: fade-slide-in 0.6s ease-out forwards;\n}\n@media (min-width: 36rem) {\n  .window {\n    height: 95vh;\n  }\n}\n.window__close-cross {\n  color: rgb(95, 93, 93);\n  font-size: 1.25rem;\n  position: absolute;\n  top: 0.3125rem;\n  right: 0.75rem;\n  font-family: monospace;\n  color: rgb(95, 93, 93);\n}\n.window__close-cross:hover {\n  color: rgba(30, 46, 77, 0.589);\n  cursor: pointer;\n}\n\n.save-button {\n  height: 3.125rem;\n  width: 5rem;\n  border-radius: 0.9375rem;\n  font-size: 0.875rem;\n}\n\n.writing-area {\n  height: 90%;\n  width: 85%;\n  margin-top: 0.625rem;\n}\n.writing-area_title {\n  width: 100%;\n  border-radius: 0.625rem;\n  border: 0.0625rem solid rgba(146, 144, 144, 0.603);\n  outline: none;\n  padding: 0.625rem;\n  height: 10%;\n  margin-bottom: 0.9375rem;\n  font-weight: 600;\n}\n.writing-area_title:focus {\n  box-shadow: 0.09375rem 0.09375rem 0.1875rem rgba(146, 144, 144, 0.603);\n}\n.writing-area_text {\n  width: 100%;\n  border-radius: 0.625rem;\n  border: 0.0625rem solid rgba(146, 144, 144, 0.603);\n  outline: none;\n  padding: 0.625rem;\n  height: 100%;\n  font-weight: 500;\n  margin-bottom: 0.9375rem;\n}\n.writing-area_text:focus {\n  box-shadow: 0.09375rem 0.09375rem 0.1875rem rgba(146, 144, 144, 0.603);\n}",".flex-col{\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    \r\n    &__gap20 {\r\n        gap: 1.25rem;\r\n    }\r\n\r\n    &__gap50 {\r\n        gap: 5.625rem;\r\n    }\r\n\r\n    &__gap70 {\r\n        gap: 4.375rem;\r\n    }\r\n}",".white-patch {\r\n    width: 100%;\r\n    max-width: 31.25rem;\r\n    border-radius: 1.875rem;\r\n    background-color: $white;\r\n    padding: 1.875rem;\r\n\r\n    .search-field {\r\n        border: 0.0625rem solid $box-shadow-light-grey;\r\n        outline: none;\r\n        padding: 0.875rem;\r\n        height: 3.125rem;\r\n        border-radius: 1.875rem;\r\n        margin-right: 0.3125rem;\r\n    }\r\n    \r\n    .search-button {\r\n        font-size: 0.875rem;\r\n        width: 4.375rem;\r\n        height: 2.5rem;\r\n        width: 2.5rem;\r\n        border-radius: 6.25rem;\r\n    }\r\n\r\n    .create-icon-label {\r\n        text-align: center;\r\n        font-size: 1rem;\r\n        color: $purple;\r\n        font-weight: 500;\r\n    }\r\n    \r\n    .create-icon {\r\n        width: 6.25rem;\r\n        height: 6.25rem;\r\n        border: 0.156rem dashed $purple;\r\n        border-radius: 6.25rem;\r\n        cursor: pointer;\r\n\r\n        &:hover{\r\n            border: 0.156rem dashed $purple-transparent;\r\n        }\r\n\r\n        &__cross {\r\n            font-size: 2.125rem;\r\n            font-weight: 500;\r\n            color: $purple;\r\n        }\r\n    }\r\n\r\n    .view-button {\r\n        width: 7.5rem;\r\n        height: 3.125rem;\r\n        border-radius: 1.625rem;\r\n    }\r\n}\r\n\r\n.overlay {\r\n    min-height: inherit;\r\n    width: 100%;\r\n    padding: 1.25rem;\r\n    position: absolute;\r\n    top: 0;\r\n    z-index: 2000;\r\n    background-color: $light-purple;\r\n}\r\n\r\n.window {\r\n    height: 80vh;\r\n    width: 100%;\r\n    max-width: 31.25rem;\r\n    background-color: $white;\r\n    border-radius: 0.625rem;\r\n    position: relative;\r\n    animation: fade-slide-in 0.6s ease-out forwards;\r\n \r\n    @include breakpoint(small) {\r\n        height: 95vh;\r\n    }\r\n    \r\n    &__close-cross {\r\n        color: $dark-grey;\r\n        font-size: 1.25rem;\r\n        position: absolute;\r\n        top: 0.3125rem;\r\n        right: 0.75rem;\r\n        font-family: monospace;\r\n        color: $dark-grey;\r\n        &:hover {\r\n            color: $purple-transparent;\r\n            cursor: pointer;\r\n        }\r\n    }\r\n}\r\n\r\n.save-button {\r\n    height: 3.125rem;\r\n    width: 5rem;\r\n    border-radius: 0.9375rem;\r\n    font-size: 0.875rem;\r\n}\r\n\r\n.writing-area {\r\n    height: 90%;\r\n    width: 85%;\r\n    margin-top: 0.625rem;\r\n\r\n    &_title {\r\n        @include input-field;\r\n        height: 10%;\r\n        margin-bottom: 0.9375rem;\r\n        font-weight: 600;\r\n    }\r\n\r\n    &_text {\r\n        @include input-field;\r\n        height: 100%;\r\n        font-weight: 500;\r\n        margin-bottom: 0.9375rem;\r\n    }\r\n}\r\n\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/sass/_base.scss","webpack://./src/sass/main.scss","webpack://./src/sass/_layout.scss","webpack://./src/sass/_components.scss"],"names":[],"mappings":"AAaA;EACI,sBAAA;EACA,SAAA;EACA,UAAA;EACA,kCAAA;ACVJ;;ADaA;EACI,eAAA;ACVJ;;ADaA;EACI,iBAAA;EACA,iCAtBK;EAuBL,kBAAA;ACVJ;ADYI;EACI,mBAAA;EACA,iBAAA;ACVR;;ADeA;EACI,eAAA;EACA,YAhCI;EAiCJ,gCAAA;EACA,wDAAA;ACZJ;;ADeA;EACI,eAAA;EACA,gBAAA;EACA,YAxCI;EAyCJ,iCA3CK;EA4CL,YAAA;ACZJ;;ADeA;EACI,yCA/CiB;EAgDjB,eAAA;ACZJ;;AD0CA;EACI;IACE,4BAAA;ECvCJ;EDyCE;IACE,wBAAA;ECvCJ;AACF;AClDA;EACI,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;ADoDJ;AClDI;EACI,YAAA;ADoDR;ACjDI;EACI,aAAA;ADmDR;AChDI;EACI,aAAA;ADkDR;;AEjEA;EACI,WAAA;EACA,mBAAA;EACA,uBAAA;EACA,uBHEI;EGDJ,iBAAA;AFoEJ;AElEI;EACI,kDAAA;EACA,aAAA;EACA,iBAAA;EACA,gBAAA;EACA,uBAAA;EACA,uBAAA;AFoER;AEnEQ;EACI,uCAAA;AFqEZ;AEjEI;EACI,mBAAA;EACA,eAAA;EACA,cAAA;EACA,aAAA;EACA,sBAAA;AFmER;AEhEI;EACI,kBAAA;EACA,eAAA;EACA,sBH1BC;EG2BD,gBAAA;AFkER;AE/DI;EACI,cAAA;EACA,eAAA;EACA,uCAAA;EACA,sBAAA;EACA,eAAA;AFiER;AE/DQ;EACI,+CAAA;AFiEZ;AE9DQ;EACI,mBAAA;EACA,gBAAA;EACA,sBH5CH;AC4GT;AE5DI;EACI,aAAA;EACA,gBAAA;EACA,uBAAA;AF8DR;;AE1DA;EACI,mBAAA;EACA,WAAA;EACA,gBAAA;EACA,kBAAA;EACA,MAAA;EACA,aAAA;EACA,kCHxDW;ACqHf;;AE1DA;EACI,YAAA;EACA,WAAA;EACA,mBAAA;EACA,uBHnEI;EGoEJ,uBAAA;EACA,kBAAA;EACA,+CAAA;AF6DJ;AD5DC;EGRD;IAUQ,YAAA;EF8DN;AACF;AE5DI;EACI,sBH1EI;EG2EJ,kBAAA;EACA,kBAAA;EACA,cAAA;EACA,cAAA;EACA,sBAAA;EACA,sBHhFI;AC8IZ;AE7DQ;EACI,8BHtFS;EGuFT,eAAA;AF+DZ;AE3DI;EACI,gBAAA;EACA,WAAA;EACA,uBAAA;EACA,mBAAA;EACA,aAAA;AF6DR;;AEzDA;EACI,WAAA;EACA,UAAA;EACA,oBAAA;AF4DJ;AE1DI;EHpDA,WAAA;EACA,uBAAA;EACA,kDAAA;EACA,aAAA;EACA,iBAAA;EGkDI,WAAA;EACA,wBAAA;EACA,gBAAA;AFgER;ADnHI;EACI,sEAAA;ACqHR;AEhEI;EH3DA,WAAA;EACA,uBAAA;EACA,kDAAA;EACA,aAAA;EACA,iBAAA;EGyDI,YAAA;EACA,gBAAA;EACA,wBAAA;AFsER;ADhII;EACI,sEAAA;ACkIR","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');\r\n@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');\r\n\r\n//Colors\r\n$purple: rgb(30, 46, 77);\r\n$purple-transparent: rgba(30, 46, 77, 0.589);\r\n$white: white;\r\n$box-shadow-grey: rgb(88, 85, 85);\r\n$box-shadow-light-grey: rgba(146, 144, 144, 0.603);\r\n$dark-grey: rgb(95, 93, 93);\r\n$light-purple: rgb(47, 69, 114);\r\n\r\n//Reset\r\n* {\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n    font-family: 'Manrope', sans-serif;\r\n}\r\n\r\nhtml {\r\n    font-size: 100%;\r\n}\r\n\r\nbody {\r\n    min-height: 100vh;\r\n    background-color: $purple;\r\n    position: relative;\r\n\r\n    main {\r\n        min-height: inherit;\r\n        padding: 1.875rem;\r\n    }\r\n}\r\n\r\n//Typography\r\nh1 {\r\n    font-size: 2rem;\r\n    color: $white;\r\n    font-family: 'Pacifico', cursive;\r\n    text-shadow: 0.0625rem 0.156rem 0.156rem $box-shadow-grey;\r\n}\r\n\r\nbutton {\r\n    font-size: 1rem;\r\n    font-weight: 600;\r\n    color: $white;\r\n    background-color: $purple;\r\n    border: none;\r\n}\r\n\r\nbutton:hover {\r\n    background-color: $purple-transparent;\r\n    cursor: pointer;\r\n}\r\n\r\n//mixins \r\n@mixin input-field {\r\n    width: 100%;\r\n    border-radius: 0.625rem;\r\n    border: 0.0625rem solid $box-shadow-light-grey;\r\n    outline: none;\r\n    padding: 0.625rem;\r\n    &:focus {\r\n        box-shadow: 0.09375rem 0.09375rem 0.1875rem $box-shadow-light-grey;\r\n    }\r\n}\r\n\r\n$breakpoints: (\r\n    'small': '36rem', // ≥576px\r\n    'medium': '48rem', // ≥768px\r\n    'large': '62rem', // ≥992p\r\n    'x-large': '75rem', // ≥1200px\r\n    'xx-large': '87.5rem', // ≥1400px\r\n);\r\n\r\n@mixin breakpoint($size) {\r\n\t@media (min-width: map-get($breakpoints, $size)) {\r\n\t\t@content;\r\n\t}\r\n}\r\n\r\n//animations\r\n@keyframes fade-slide-in {\r\n    from {\r\n      transform: translateY(-5rem);\r\n    }\r\n    to {\r\n      transform: translateY(0);\r\n    }\r\n  }","@import url(\"https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap\");\n@import url(\"https://fonts.googleapis.com/css2?family=Pacifico&display=swap\");\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-family: \"Manrope\", sans-serif;\n}\n\nhtml {\n  font-size: 100%;\n}\n\nbody {\n  min-height: 100vh;\n  background-color: rgb(30, 46, 77);\n  position: relative;\n}\nbody main {\n  min-height: inherit;\n  padding: 1.875rem;\n}\n\nh1 {\n  font-size: 2rem;\n  color: white;\n  font-family: \"Pacifico\", cursive;\n  text-shadow: 0.0625rem 0.156rem 0.156rem rgb(88, 85, 85);\n}\n\nbutton {\n  font-size: 1rem;\n  font-weight: 600;\n  color: white;\n  background-color: rgb(30, 46, 77);\n  border: none;\n}\n\nbutton:hover {\n  background-color: rgba(30, 46, 77, 0.589);\n  cursor: pointer;\n}\n\n@keyframes fade-slide-in {\n  from {\n    transform: translateY(-5rem);\n  }\n  to {\n    transform: translateY(0);\n  }\n}\n.flex-col {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n.flex-col__gap20 {\n  gap: 1.25rem;\n}\n.flex-col__gap50 {\n  gap: 5.625rem;\n}\n.flex-col__gap70 {\n  gap: 4.375rem;\n}\n\n.white-patch {\n  width: 100%;\n  max-width: 31.25rem;\n  border-radius: 1.875rem;\n  background-color: white;\n  padding: 1.875rem;\n}\n.white-patch .search-field {\n  border: 0.0625rem solid rgba(146, 144, 144, 0.603);\n  outline: none;\n  padding: 0.875rem;\n  height: 3.125rem;\n  border-radius: 1.875rem;\n  margin-right: 0.3125rem;\n}\n.white-patch .search-field:focus {\n  border: 0.0625rem solid rgb(95, 93, 93);\n}\n.white-patch .search-button {\n  font-size: 0.875rem;\n  width: 4.375rem;\n  height: 2.5rem;\n  width: 2.5rem;\n  border-radius: 6.25rem;\n}\n.white-patch .create-icon-label {\n  text-align: center;\n  font-size: 1rem;\n  color: rgb(30, 46, 77);\n  font-weight: 500;\n}\n.white-patch .create-icon {\n  width: 6.25rem;\n  height: 6.25rem;\n  border: 0.156rem dashed rgb(30, 46, 77);\n  border-radius: 6.25rem;\n  cursor: pointer;\n}\n.white-patch .create-icon:hover {\n  border: 0.156rem dashed rgba(30, 46, 77, 0.589);\n}\n.white-patch .create-icon__cross {\n  font-size: 2.125rem;\n  font-weight: 500;\n  color: rgb(30, 46, 77);\n}\n.white-patch .view-button {\n  width: 7.5rem;\n  height: 3.125rem;\n  border-radius: 1.625rem;\n}\n\n.overlay {\n  min-height: inherit;\n  width: 100%;\n  padding: 1.25rem;\n  position: absolute;\n  top: 0;\n  z-index: 2000;\n  background-color: rgb(47, 69, 114);\n}\n\n.window {\n  height: 80vh;\n  width: 100%;\n  max-width: 31.25rem;\n  background-color: white;\n  border-radius: 0.625rem;\n  position: relative;\n  animation: fade-slide-in 0.6s ease-out forwards;\n}\n@media (min-width: 36rem) {\n  .window {\n    height: 95vh;\n  }\n}\n.window__close-cross {\n  color: rgb(95, 93, 93);\n  font-size: 1.25rem;\n  position: absolute;\n  top: 0.3125rem;\n  right: 0.75rem;\n  font-family: monospace;\n  color: rgb(95, 93, 93);\n}\n.window__close-cross:hover {\n  color: rgba(30, 46, 77, 0.589);\n  cursor: pointer;\n}\n.window .save-button {\n  height: 3.125rem;\n  width: 5rem;\n  border-radius: 1.125rem;\n  font-size: 0.875rem;\n  outline: none;\n}\n\n.writing-area {\n  height: 90%;\n  width: 85%;\n  margin-top: 0.625rem;\n}\n.writing-area_title {\n  width: 100%;\n  border-radius: 0.625rem;\n  border: 0.0625rem solid rgba(146, 144, 144, 0.603);\n  outline: none;\n  padding: 0.625rem;\n  height: 10%;\n  margin-bottom: 0.9375rem;\n  font-weight: 600;\n}\n.writing-area_title:focus {\n  box-shadow: 0.09375rem 0.09375rem 0.1875rem rgba(146, 144, 144, 0.603);\n}\n.writing-area_text {\n  width: 100%;\n  border-radius: 0.625rem;\n  border: 0.0625rem solid rgba(146, 144, 144, 0.603);\n  outline: none;\n  padding: 0.625rem;\n  height: 100%;\n  font-weight: 500;\n  margin-bottom: 0.9375rem;\n}\n.writing-area_text:focus {\n  box-shadow: 0.09375rem 0.09375rem 0.1875rem rgba(146, 144, 144, 0.603);\n}",".flex-col{\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    \r\n    &__gap20 {\r\n        gap: 1.25rem;\r\n    }\r\n\r\n    &__gap50 {\r\n        gap: 5.625rem;\r\n    }\r\n\r\n    &__gap70 {\r\n        gap: 4.375rem;\r\n    }\r\n}",".white-patch {\r\n    width: 100%;\r\n    max-width: 31.25rem;\r\n    border-radius: 1.875rem;\r\n    background-color: $white;\r\n    padding: 1.875rem;\r\n\r\n    .search-field {\r\n        border: 0.0625rem solid $box-shadow-light-grey;\r\n        outline: none;\r\n        padding: 0.875rem;\r\n        height: 3.125rem;\r\n        border-radius: 1.875rem;\r\n        margin-right: 0.3125rem;\r\n        &:focus {\r\n            border: 0.0625rem solid $dark-grey;\r\n        }\r\n    }\r\n    \r\n    .search-button {\r\n        font-size: 0.875rem;\r\n        width: 4.375rem;\r\n        height: 2.5rem;\r\n        width: 2.5rem;\r\n        border-radius: 6.25rem;\r\n    }\r\n\r\n    .create-icon-label {\r\n        text-align: center;\r\n        font-size: 1rem;\r\n        color: $purple;\r\n        font-weight: 500;\r\n    }\r\n    \r\n    .create-icon {\r\n        width: 6.25rem;\r\n        height: 6.25rem;\r\n        border: 0.156rem dashed $purple;\r\n        border-radius: 6.25rem;\r\n        cursor: pointer;\r\n\r\n        &:hover{\r\n            border: 0.156rem dashed $purple-transparent;\r\n        }\r\n\r\n        &__cross {\r\n            font-size: 2.125rem;\r\n            font-weight: 500;\r\n            color: $purple;\r\n        }\r\n    }\r\n\r\n    .view-button {\r\n        width: 7.5rem;\r\n        height: 3.125rem;\r\n        border-radius: 1.625rem;\r\n    }\r\n}\r\n\r\n.overlay {\r\n    min-height: inherit;\r\n    width: 100%;\r\n    padding: 1.25rem;\r\n    position: absolute;\r\n    top: 0;\r\n    z-index: 2000;\r\n    background-color: $light-purple;\r\n}\r\n\r\n.window {\r\n    height: 80vh;\r\n    width: 100%;\r\n    max-width: 31.25rem;\r\n    background-color: $white;\r\n    border-radius: 0.625rem;\r\n    position: relative;\r\n    animation: fade-slide-in 0.6s ease-out forwards;\r\n \r\n    @include breakpoint(small) {\r\n        height: 95vh;\r\n    }\r\n    \r\n    &__close-cross {\r\n        color: $dark-grey;\r\n        font-size: 1.25rem;\r\n        position: absolute;\r\n        top: 0.3125rem;\r\n        right: 0.75rem;\r\n        font-family: monospace;\r\n        color: $dark-grey;\r\n        &:hover {\r\n            color: $purple-transparent;\r\n            cursor: pointer;\r\n        }\r\n    }\r\n\r\n    .save-button {\r\n        height: 3.125rem;\r\n        width: 5rem;\r\n        border-radius: 1.125rem;\r\n        font-size: 0.875rem;\r\n        outline: none;\r\n    }\r\n}\r\n\r\n.writing-area {\r\n    height: 90%;\r\n    width: 85%;\r\n    margin-top: 0.625rem;\r\n\r\n    &_title {\r\n        @include input-field;\r\n        height: 10%;\r\n        margin-bottom: 0.9375rem;\r\n        font-weight: 600;\r\n    }\r\n\r\n    &_text {\r\n        @include input-field;\r\n        height: 100%;\r\n        font-weight: 500;\r\n        margin-bottom: 0.9375rem;\r\n    }\r\n}\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -671,18 +674,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 class LocalStorage {
     static getNotes() {
-        
-    }
-
-    static saveNote(note) {
-        const notes = JSON.parse(localStorage.getItem('all-notes') || '[]') ;
+        /* const notes = JSON.parse(localStorage.getItem('all-notes') || '[]') ;
         if(note.id) {
 
         } else {
             
         }
         notes.push(note);
-        localStorage.setItem('all-notes', JSON.stringify(notes));
+        localStorage.setItem('all-notes', JSON.stringify(notes)); */
+    }
+
+    static saveNote(note) {
+        console.log(note)
     }
 }
 
@@ -698,22 +701,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Note: () => (/* binding */ Note)
 /* harmony export */ });
-/* harmony import */ var _local_storage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./local-storage */ "./src/js/local-storage.js");
-
-
 class Note {
     constructor(title, text) {
         this.title = title;
         this.text = text;
-        /* this.id = */ 
+        this.id = Math.floor(Math.random() * 10000)
         this.date = new Date();
-    }
-
-    create() {
-        const title = document.getElementById('writing-area-title').value;
-        const text = document.getElementById('writing-area-text').value;
-        const note = new Note(title, text);
-        _local_storage__WEBPACK_IMPORTED_MODULE_0__.LocalStorage.saveNote(note)
     }
 }
 
@@ -735,7 +728,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class WritingWindow {
-    static displayWindow() {
+    static data;
+    static displayWindow(data) {
         const rootElement = document.getElementById('page-container');
         rootElement.insertAdjacentHTML('beforeend', 
         `<div id="overlay" class="overlay flex-col">
@@ -749,19 +743,49 @@ class WritingWindow {
             </div>
         </div>
         `);
+        if(data) {
+            this.data = data;
+            document.getElementById('writing-area-title').value = this.data.title;
+            document.getElementById('writing-area-text').value = this.data.text;
+        }
         document.getElementById('save-button').addEventListener('click', (event)=> {
             event.preventDefault();
-            const note = this.getWindowInput()
-            _local_storage__WEBPACK_IMPORTED_MODULE_0__.LocalStorage.saveNote(note);
-            /* new Note().create(); */
+            this.checkUserInput();
         });
     }
 
-    getWindowInput (){
-        const title = document.getElementById('writing-area-title').value;
-        const text = document.getElementById('writing-area-text').value;
-        const note = new _note__WEBPACK_IMPORTED_MODULE_1__.Note(title, text);
-        return note;
+    static storeUserInput(titleValue, textValue){
+        document.getElementById('save-button').disabled = true;
+        if(this.data) {
+            this.data.title = titleValue;
+            this.data.text = textValue; 
+            alert('Note has been updated');
+            return this.data;
+        } else {
+            const title = titleValue;
+            const text = textValue;
+            const newNote = new _note__WEBPACK_IMPORTED_MODULE_1__.Note(title, text);
+            alert('New note has been saved');
+            return newNote;
+        }
+    }
+
+    static checkUserInput() {
+        const titleValue = document.getElementById('writing-area-title').value.trim();
+        const textValue = document.getElementById('writing-area-text').value.trim();
+        if(titleValue && textValue) {
+            if(this.data) {
+                if(this.data.title === titleValue && this.data.text === textValue) {
+                    alert('Not saving because file still unchanged!');
+                    return;
+                }
+            }
+            const note = this.storeUserInput(titleValue, textValue);
+            _local_storage__WEBPACK_IMPORTED_MODULE_0__.LocalStorage.saveNote(note);
+        } else {
+            alert('Fill empty field(s) before saving!');
+            return;
+        }
     }
 }
 
@@ -856,29 +880,10 @@ __webpack_require__.r(__webpack_exports__);
 
 class App {
     init() {
-        document.getElementById('create-icon').addEventListener('click', _js_writing_window_js__WEBPACK_IMPORTED_MODULE_1__.WritingWindow.displayWindow);
+        document.getElementById('create-icon').addEventListener('click', ()=> {
+            _js_writing_window_js__WEBPACK_IMPORTED_MODULE_1__.WritingWindow.displayWindow();
+        })
     }
-    /* constructor(rootElement) {
-        this.rootElement = rootElement
-        this.renderHomePage(this.rootElement);
-    } */
-    
-   /*  renderHomePage(rootElementId) {
-        const rootElement = document.getElementById(`${rootElementId}`)
-        rootElement.innerHTML = `
-        <h1 id='app-title'>My Note Handler</h1>
-        <div id='white-patch'class='white-patch flex-col flex-col__gap70'>
-            <div id='create-icon-group' class='create-icon-group flex-col flex-col__gap20'>
-                <p id='create-icon-label' class='create-icon-label'>Create note</p>
-                <div id='create-icon' class='create-icon flex-col'>
-                    <div class='create-icon__cross'>+</div>
-                </div>
-            </div>
-            <button id='search-button' class='search-button' type='button'>View all</button>
-        </div>
-        `
-       document.getElementById('create-icon').addEventListener('click', WritingWindow.displayWindow);
-    } */
 }
 
 const app = new App();
@@ -890,4 +895,4 @@ app.init();
 
 /******/ })()
 ;
-//# sourceMappingURL=07157e086e248cc0ec62.js.map
+//# sourceMappingURL=8a6a7f8cd56a23bf8120.js.map

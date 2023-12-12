@@ -1,16 +1,16 @@
 export class LocalStorage {
     static getNotes() {
-        
-    }
-
-    static saveNote(note) {
-        const notes = JSON.parse(localStorage.getItem('all-notes') || '[]') ;
+        /* const notes = JSON.parse(localStorage.getItem('all-notes') || '[]') ;
         if(note.id) {
 
         } else {
             
         }
         notes.push(note);
-        localStorage.setItem('all-notes', JSON.stringify(notes));
+        localStorage.setItem('all-notes', JSON.stringify(notes)); */
+    }
+
+    static saveNote(note) {
+        console.log(note)
     }
 }
