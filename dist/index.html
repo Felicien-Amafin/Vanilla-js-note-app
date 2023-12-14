@@ -4,23 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Note Handler</title>
-<script defer src="8a6a7f8cd56a23bf8120.js"></script></head>
+<script defer src="f532d2dfa49347807ddc.js"></script></head>
 <body>
     <main id="page-container" class="flex-col flex-col__gap50 ">
-        <h1 id='app-title'>My Note Handler</h1>
-        <div id='white-patch'class='white-patch flex-col flex-col__gap70'>
+        <h1 id="app-title">My Note Handler</h1>
+        <div id="white-patch" class="white-patch flex-col flex-col__gap70">
             <form id="search">
                 <input id="search-field" class="search-field" type="text" autocomplete="off" placeholder="Search by keyword ...">
-                <button id="search-button" class="search-button" type="button">-></button>
+                <button id="arrow-button" class="arrow-button" type="button">-></button>
             </form>
-            <div id='create-icon-group' class='create-icon-group flex-col flex-col__gap20'>
-                <p id='create-icon-label' class='create-icon-label'>Create note</p>
-                <div id='create-icon' class='create-icon flex-col'>
-                    <div class='create-icon__cross'>+</div>
+            <div id="create-icon-group" class="create-icon-group flex-col flex-col__gap20">
+                <p id="create-icon-label" class="create-icon-label">Create note</p>
+                <div id="create-icon" class="create-icon flex-col">
+                    <div class="create-icon__cross">+</div>
                 </div>
             </div>
-            <button id='view-button' class='view-button' type='button'>View all</button>
+            <button id="view-button" class="view-button" type="button">View all</button>
         </div>
     </main>
+    <template id="alert-template" >
+        <div id="writing-window-overlay" class="writing-window-overlay flex-col">
+            <div id="alert-box" class="alert-box flex-col flex-col__gap20 ">
+                <p id="alert-box-message" class="alert-box__message"></p>
+                <button id="alert-box-button" class="alert-box__button" type="button">OK</button>
+            </div>
+        </div>
+    </template>
 </body>
 </html>

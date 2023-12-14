@@ -1,27 +1,31 @@
 import { LocalStorage } from "./local-storage";
 import { Note } from "./note";
+import { AlertBox } from "./alert-box";
 
 export class WritingWindow {
-    static data;
-    static displayWindow(data) {
+    static noteToUpdate;
+    static displayWindow(noteToUpdate) {
         const rootElement = document.getElementById('page-container');
         rootElement.insertAdjacentHTML('beforeend', 
-        `<div id="overlay" class="overlay flex-col">
+        `<div id="home-page-overlay" class="home-page-overlay flex-col">
             <div id="writing-window" class="window flex-col">
                 <span id="close-window-cross" class="window__close-cross">x</span>
                 <form id="writing-area" class="writing-area flex-col">
-                    <input id="writing-area-title" class="writing-area_title" type="text" autocomplete="off" placeholder="Enter title ...">
-                    <textarea id="writing-area-text" class="writing-area_text" name="writing-area_text" placeholder="Enter text..." ></textarea>
+                    <input id="writing-area-title" class="writing-area__title" type="text" autocomplete="off" placeholder="Enter title ...">
+                    <textarea id="writing-area-text" class="writing-area__text" name="writing-area-text" placeholder="Enter text..." ></textarea>
                     <button id="save-button" class="save-button" type="button">Save</button>
                 </form>
             </div>
         </div>
         `);
-        if(data) {
-            this.data = data;
-            document.getElementById('writing-area-title').value = this.data.title;
-            document.getElementById('writing-area-text').value = this.data.text;
+        if(noteToUpdate) {
+            this.noteToUpdate = noteToUpdate;
+            document.getElementById('writing-area-title').value = this.noteToUpdate.title;
+            document.getElementById('writing-area-text').value = this.noteToUpdate.text;
         }
+        document.getElementById('close-window-cross').addEventListener('click', ()=> {
+            document.getElementById('home-page-overlay').remove();//Remove home page overlay and writing window inside
+        });
         document.getElementById('save-button').addEventListener('click', (event)=> {
             event.preventDefault();
             this.checkUserInput();
@@ -29,17 +33,16 @@ export class WritingWindow {
     }
 
     static storeUserInput(titleValue, textValue){
-        document.getElementById('save-button').disabled = true;
-        if(this.data) {
-            this.data.title = titleValue;
-            this.data.text = textValue; 
-            alert('Note has been updated');
-            return this.data;
+        if(this.noteToUpdate) {
+            this.noteToUpdate.title = titleValue;
+            this.noteToUpdate.text = textValue; 
+            AlertBox.showAlertBox('Your note has been updated and saved.', 'alert-box__message--green', 'home-page-overlay');
+            return this.noteToUpdate;
         } else {
             const title = titleValue;
             const text = textValue;
             const newNote = new Note(title, text);
-            alert('New note has been saved');
+            AlertBox.showAlertBox('Note has been saved.', 'alert-box__message--green', 'home-page-overlay');
             return newNote;
         }
     }
@@ -48,16 +51,16 @@ export class WritingWindow {
         const titleValue = document.getElementById('writing-area-title').value.trim();
         const textValue = document.getElementById('writing-area-text').value.trim();
         if(titleValue && textValue) {
-            if(this.data) {
-                if(this.data.title === titleValue && this.data.text === textValue) {
-                    alert('Not saving because file still unchanged!');
+            if(this.noteToUpdate) {
+                if(this.noteToUpdate.title === titleValue && this.noteToUpdate.text === textValue) {
+                    AlertBox.showAlertBox('Note must be updated before saving!', 'alert-box__message--red', 'writing-window-overlay');
                     return;
                 }
             }
             const note = this.storeUserInput(titleValue, textValue);
             LocalStorage.saveNote(note);
         } else {
-            alert('Fill empty field(s) before saving!');
+            AlertBox.showAlertBox('Fill empty field(s) before saving!',  'alert-box__message--red', 'writing-window-overlay');
             return;
         }
     }
