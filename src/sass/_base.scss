@@ -8,10 +8,14 @@ $white: white;
 $box-shadow-grey: rgb(88, 85, 85);
 $box-shadow-light-grey: rgba(146, 144, 144, 0.603);
 $dark-grey: rgb(95, 93, 93);
-$light-purple: rgb(47, 69, 114);
-$red: rgba(247, 58, 58, 0.911);
-$green: rgb(10, 167, 10);
-$window-overlay-grey:  rgba(105, 104, 104, 0.541);
+$home-page-overlay: rgb(47, 69, 114);
+$alert-box-red: rgba(247, 58, 58, 0.911);
+$alert-box-green: rgb(10, 167, 10);
+$overlay-alert-box:  rgba(85, 85, 85, 0.459);
+$note-widget-title: rgb(37, 35, 35);
+$note-widget-text: rgb(59, 56, 56);
+$note-widget: rgb(234, 240, 253);
+$note-widget-hover: rgb(204, 219, 252);
 
 //Reset
 * {
@@ -67,6 +71,14 @@ button:hover {
     &:focus {
         box-shadow: 0.09375rem 0.09375rem 0.1875rem $box-shadow-light-grey;
     }
+}
+
+@mixin overlay {
+    min-height: 100%;
+    width: 100%;
+    padding: 1.25rem;
+    position: absolute;
+    top: 0;
 }
 
 $breakpoints: (

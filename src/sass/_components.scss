@@ -23,8 +23,9 @@
         height: 2.5rem;
         width: 2.5rem;
         border-radius: 6.25rem;
+        color: $white;
     }
-
+    
     .create-icon-label {
         text-align: center;
         font-size: 1rem;
@@ -57,50 +58,116 @@
     }
 }
 
-.home-page-overlay {
-    min-height: 100%;
-    width: 100%;
-    padding: 1.25rem;
-    position: absolute;
-    top: 0;
+.overlay-home-page {
+    @include overlay;
     z-index: 2000;
-    background-color: $light-purple;
+    background-color: $home-page-overlay;
+}
+
+.overlay-alert-box {
+    @include overlay;
+    z-index: 4000;
+    background-color: $overlay-alert-box;
 }
 
 .window {
     height: 80vh;
     width: 100%;
-    max-width: 31.25rem;
     background-color: $white;
     border-radius: 0.625rem;
-    position: relative;
     animation: fade-slide-in 0.6s ease-out forwards;
- 
     @include breakpoint(small) {
         height: 85vh;
     }
-    
-    &__close-cross {
-        color: $dark-grey;
-        font-size: 1.25rem;
-        position: absolute;
-        top: 0.3125rem;
-        right: 0.75rem;
-        font-family: monospace;
-        color: $dark-grey;
-        &:hover {
-            color: $purple-transparent;
-            cursor: pointer;
-        }
+
+    &--writing {
+        max-width: 31.25rem;
     }
 
-    .save-button {
-        height: 3.125rem;
-        width: 5rem;
-        border-radius: 1.125rem;
-        font-size: 0.875rem;
-        outline: none;
+    &--note-viewing {
+        padding: 2.8125rem;
+        @include breakpoint(large) {
+            width:90%;
+        }
     }
+}
+
+.close-cross {
+    font-size: 1.25rem;
+    top: 0.3125rem;
+    right: 0.75rem;
+    padding: 0.3125rem;
+    font-family: monospace;
+    color: $dark-grey;
+    position: absolute;
+    &:hover {
+        color: $purple-transparent;
+        cursor: pointer;
+    }
+}
+
+.widgets-list{
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1.25rem;
+    padding: 0.625rem;
+    @include breakpoint(small) {
+     grid-template-columns: 1fr 1fr;
+    }
+    @include breakpoint(medium) {
+     grid-template-columns: repeat(3, 1fr);
+    }
+    @include breakpoint(large) {
+     grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.note-widget {
+    width: 100%;
+    height: 12.5rem;
+    padding: 1.875rem;
+    background-color: $note-widget;
+    margin: auto;
+    max-width: 21.875rem;
+    border-radius: 1.875rem;
+    position: relative;
+    &:hover {
+        background-color: $note-widget-hover;
+    }
+
+    &__title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: $note-widget-title;
+        text-align: center;
+    }
+
+    &__text {
+        font-size: 1rem;
+        color: $note-widget-text;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    &__date {
+        font-size: 0.875rem;
+        color: $purple;
+        font-weight: 500;
+        text-align: center;
+    }
+}
+
+.save-button {
+    height: 3.125rem;
+    width: 5rem;
+    border-radius: 1.125rem;
+    font-size: 0.875rem;
+    outline: none;
 }
 
 .writing-area {
@@ -123,21 +190,12 @@
     }
 }
 
-.writing-window-overlay {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    z-index: 30000;
-    background-color: $window-overlay-grey;
-    border-radius: 0.625rem;
-}
-
 .alert-box {
     width: 75%;
     height: 25%;
     padding: 1.5625rem;
     text-align: center;
+    line-height: 1.25rem;
     border-radius: 1.25rem;
     background-color: $white;
     z-index: 100000;
@@ -147,20 +205,27 @@
         width: 60%;
         height: 30%;
     }
+    @include breakpoint(medium) {
+        width: 40%;
+       
+    }
+    @include breakpoint(large) {
+        width: 30%;
+       
+    }
 
     &__message {
-        color: $dark-grey;
         font-size: 0.875rem;
         font-weight: 600;
         line-height: 1.5625rem;
     }
 
     &__message--green {
-        color: $green;
+        color: $alert-box-green;
     }
 
     &__message--red {
-        color: $red;
+        color: $alert-box-red;
     }
 
     &__button {
