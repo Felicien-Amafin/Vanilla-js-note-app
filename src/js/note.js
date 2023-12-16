@@ -3,6 +3,6 @@ export class Note {
         this.title = title;
         this.text = text;
         this.id = Math.floor((Math.random() * 10000)*100)
-        this.date = new Date();
+        this.date = new Date().toISOString();
     }
 }

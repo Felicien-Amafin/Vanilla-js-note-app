@@ -1,3 +1,5 @@
+import { WritingWindow } from "./writing-window";
+
 export class AlertBox {
     static showAlertBox(message, messageColor, elementToRemove) {
         const rootElement = document.getElementById('page-container');
@@ -9,7 +11,7 @@ export class AlertBox {
         messagEl.classList.add(`${messageColor}`);
         rootElement.querySelector('.alert-box__button').addEventListener('click', ()=> {
             if(elementToRemove === 'overlay-home-page') {
-                document.getElementById('overlay-home-page').remove();
+                WritingWindow.removeWindow();
             }
             document.getElementById('overlay-alert-box').remove();
         } )

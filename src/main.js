@@ -1,5 +1,6 @@
 import './sass/main.scss'
 import { WritingWindow } from './js/writing-window'
+import { NoteViewingWindow } from './js/note-viewing-window'
 import { LocalStorage } from './js/local-storage'
 
 class App {
@@ -8,7 +9,7 @@ class App {
             WritingWindow.displayWindow();
         })
         document.getElementById('view-button').addEventListener('click', ()=> {
-            LocalStorage.getNotes();
+            NoteViewingWindow.displayWindow(LocalStorage.getNotes());
         })
     }
 }

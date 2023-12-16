@@ -24,7 +24,7 @@ export class WritingWindow {
             document.getElementById('writing-area-text').value = this.noteToUpdate.text;
         }
         document.getElementById('close-window-cross').addEventListener('click', ()=> {
-            document.getElementById('overlay-home-page').remove();//Remove home page overlay and writing window inside
+            this.removeWindow();
         });
         document.getElementById('save-button').addEventListener('click', (event)=> {
             event.preventDefault();
@@ -63,5 +63,8 @@ export class WritingWindow {
             AlertBox.showAlertBox('Fill empty field(s) before saving!',  'alert-box__message--red', 'overlay-alert-box');
             return;
         }
+    }
+    static removeWindow() {
+        document.getElementById('overlay-home-page').remove();
     }
 }
