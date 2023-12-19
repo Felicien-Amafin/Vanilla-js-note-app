@@ -4,14 +4,15 @@ import { AlertBox } from "./alert-box";
 
 export class WritingWindow {
     static noteToUpdate;
+
     static displayWindow(noteToUpdate) {
         const rootElement = document.getElementById('page-container');
         rootElement.insertAdjacentHTML('beforeend', 
-        `<div id="overlay-home-page" class="overlay-home-page flex-col">
+        `<div id="window-overlay" class="window-overlay flex-col">
             <div id="writing-window" class="window window--writing flex-col">
                 <span id="close-window-cross" class="close-cross">x</span>
                 <form id="writing-area" class="writing-area flex-col">
-                    <input id="writing-area-title" class="writing-area__title" type="text" autocomplete="off" placeholder="Enter title ...">
+                    <input id="writing-area-title" class="writing-area__title" type="text" autocomplete="off" maxlength="40" placeholder="Enter title ...">
                     <textarea id="writing-area-text" class="writing-area__text" name="writing-area-text" placeholder="Enter text..." ></textarea>
                     <button id="save-button" class="save-button" type="button">Save</button>
                 </form>
@@ -25,6 +26,7 @@ export class WritingWindow {
         }
         document.getElementById('close-window-cross').addEventListener('click', ()=> {
             this.removeWindow();
+            if(WritingWindow.noteToUpdate){ WritingWindow.noteToUpdate = null; };
         });
         document.getElementById('save-button').addEventListener('click', (event)=> {
             event.preventDefault();
@@ -36,13 +38,13 @@ export class WritingWindow {
         if(this.noteToUpdate) {
             this.noteToUpdate.title = titleValue;
             this.noteToUpdate.text = textValue; 
-            AlertBox.showAlertBox('Your note has been updated and saved.', 'alert-box__message--green', 'overlay-home-page');
+            AlertBox.showGenericAlertBox('Your note has been updated and saved.', 'alert-box__message--green', 'window-overlay');
             return this.noteToUpdate;
         } else {
             const title = titleValue;
             const text = textValue;
             const newNote = new Note(title, text);
-            AlertBox.showAlertBox('Note has been saved.', 'alert-box__message--green', 'overlay-home-page');
+            AlertBox.showGenericAlertBox('Note has been saved.', 'alert-box__message--green', 'window-overlay');
             return newNote;
         }
     }
@@ -53,18 +55,19 @@ export class WritingWindow {
         if(titleValue && textValue) {
             if(this.noteToUpdate) {
                 if(this.noteToUpdate.title === titleValue && this.noteToUpdate.text === textValue) {
-                    AlertBox.showAlertBox('Note must be updated before saving!', 'alert-box__message--red', 'overlay-alert-box');
+                    AlertBox.showGenericAlertBox('Note must be updated before saving!', 'alert-box__message--red', 'alert-box-overlay');
                     return;
                 }
             }
             const note = this.storeUserInput(titleValue, textValue);
             LocalStorage.saveNote(note);
         } else {
-            AlertBox.showAlertBox('Fill empty field(s) before saving!',  'alert-box__message--red', 'overlay-alert-box');
+            AlertBox.showGenericAlertBox('Fill empty field(s) before saving!',  'alert-box__message--red', 'alert-box-overlay');
             return;
         }
     }
+
     static removeWindow() {
-        document.getElementById('overlay-home-page').remove();
+        document.getElementById('window-overlay').remove();
     }
 }

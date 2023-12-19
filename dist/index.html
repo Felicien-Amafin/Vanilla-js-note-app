@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Note Handler</title>
-<script defer src="2ac1e0e2705619559e8f.js"></script></head>
+<script defer src="c0e48858fd82d92ce45d.js"></script></head>
 <body>
     <main id="page-container" class="flex-col flex-col__gap50 ">
         <h1 id="app-title">My Note Handler</h1>
@@ -22,11 +22,22 @@
             <button id="view-button" class="view-button" type="button">View all</button>
         </div>
     </main>
-    <template id="alert-template" >
-        <div id="overlay-alert-box" class="overlay-alert-box flex-col">
-            <div id="alert-box" class="alert-box flex-col flex-col__gap20 ">
+    <template id="g-alert-template" >
+        <div id="alert-box-overlay" class="alert-box-overlay flex-col">
+            <div id="generic-alert-box" class="alert-box flex-col flex-col__gap20 ">
                 <p id="alert-box-message" class="alert-box__message"></p>
                 <button id="alert-box-button" class="alert-box__button" type="button">OK</button>
+            </div>
+        </div>
+    </template>
+    <template id="w-alert-template" >
+        <div id="alert-box-overlay" class="alert-box-overlay flex-col">
+            <div id="note-w-alert-box" class="alert-box flex-col flex-col__gap20 ">
+                <p id="alert-box-message" class="alert-box__message alert-box-message--red">Are you sure you want to delete this note?</p>
+                <div class="flex-row flex-row__gap10">
+                    <button id="alert-box-button-yes" class="alert-box__button" type="button">Yes</button>
+                    <button id="alert-box-button-no" class="alert-box__button" type="button">No</button>
+                </div>
             </div>
         </div>
     </template>

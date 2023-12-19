@@ -58,13 +58,13 @@
     }
 }
 
-.overlay-home-page {
+.window-overlay {
     @include overlay;
     z-index: 2000;
-    background-color: $home-page-overlay;
+    background-color: $overlay-window;
 }
 
-.overlay-alert-box {
+.alert-box-overlay {
     @include overlay;
     z-index: 4000;
     background-color: $overlay-alert-box;
@@ -144,7 +144,7 @@
     }
 
     &__title {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
         font-weight: 600;
         color: $note-widget-title;
     }
@@ -153,6 +153,7 @@
         font-size: 1rem;
         color: $note-widget-text;
         font-weight: 500;
+
     }
 
     &__date {
