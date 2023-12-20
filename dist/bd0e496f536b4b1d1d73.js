@@ -875,7 +875,7 @@ class LocalStorage {
     }
 
     static saveNote(noteToSave) {
-        const notes = JSON.parse(localStorage.getItem('all-notes') || '[]') ;
+        let notes = JSON.parse(localStorage.getItem('all-notes') || '[]') ;
         if(_writing_window__WEBPACK_IMPORTED_MODULE_0__.WritingWindow.noteToUpdate) {
             notes.find((noteObj)=> {
                 if(noteToSave.id === noteObj.id) {
@@ -886,9 +886,7 @@ class LocalStorage {
             }) 
         } else {
             notes.push(noteToSave);
-           
         }
-        notes.reverse();
         localStorage.setItem('all-notes', JSON.stringify(notes));
     }
 
@@ -920,10 +918,14 @@ __webpack_require__.r(__webpack_exports__);
 class NoteViewingWindow {
     static displayWindow(notes) {
         if(notes.length === 0) {
-            const message = 'No note(s) in storage yet. Click "Create note" to start adding notes.'
+            const message = 'No note(s) in storage yet. Click "Create note" to start adding notes.';
             _alert_box__WEBPACK_IMPORTED_MODULE_1__.AlertBox.showGenericAlertBox(message, 'alert-box__message--red', 'overlay-alert-box');
             return;
-        } 
+        } else if(!notes) {
+            const message = 'No corresponding note(s) to your search';
+            _alert_box__WEBPACK_IMPORTED_MODULE_1__.AlertBox.showGenericAlertBox(message, 'alert-box__message--red', 'overlay-alert-box');
+            return;
+        }
         const rootElement = document.getElementById('page-container');
         rootElement.insertAdjacentHTML('beforeend', 
         `<div id="window-overlay" class="window-overlay flex-col">
@@ -934,7 +936,7 @@ class NoteViewingWindow {
         </div>
         `);
         document.getElementById('close-window-cross').addEventListener('click', this.removeWindow.bind(this));
-        _note_widget__WEBPACK_IMPORTED_MODULE_0__.NoteWidget.addNoteWidgets(notes);
+        _note_widget__WEBPACK_IMPORTED_MODULE_0__.NoteWidget.addNoteWidgets(notes.reverse()); // Reverse notes to get the more recent added notes
     }
 
     static removeWindow() {
@@ -1025,6 +1027,49 @@ class Note {
     }
 }
 
+
+/***/ }),
+
+/***/ "./src/js/search-form.js":
+/*!*******************************!*\
+  !*** ./src/js/search-form.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   SearchForm: () => (/* binding */ SearchForm)
+/* harmony export */ });
+/* harmony import */ var _alert_box__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./alert-box */ "./src/js/alert-box.js");
+/* harmony import */ var _local_storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./local-storage */ "./src/js/local-storage.js");
+/* harmony import */ var _note_viewing_window__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./note-viewing-window */ "./src/js/note-viewing-window.js");
+
+
+
+
+class SearchForm {
+    static searchHandler() {
+        if(!document.getElementById('search-field').value.trim()) {
+            const message = 'Enter a search keyword in input field';
+            _alert_box__WEBPACK_IMPORTED_MODULE_0__.AlertBox.showGenericAlertBox(message, 'alert-box__message--red', 'overlay-alert-box');
+            return;
+        }
+        const allNotes = _local_storage__WEBPACK_IMPORTED_MODULE_1__.LocalStorage.getNotes();
+        _note_viewing_window__WEBPACK_IMPORTED_MODULE_2__.NoteViewingWindow.displayWindow(this.loadSearch(allNotes));
+        
+    }
+
+    static loadSearch(allNotes) {
+        const searchField = document.getElementById('search-field');
+        const searchTerm = searchField.value.trim();
+        searchField.value = '';
+        const searchResult = allNotes.filter((note)=> {
+            let noteTitle = note.title.toLowerCase();
+            return noteTitle.includes(searchTerm.toLowerCase());
+        })
+        return searchResult.length === 0 ? false : searchResult;
+    }
+}
 
 /***/ }),
 
@@ -1202,6 +1247,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_writing_window__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/writing-window */ "./src/js/writing-window.js");
 /* harmony import */ var _js_note_viewing_window__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/note-viewing-window */ "./src/js/note-viewing-window.js");
 /* harmony import */ var _js_local_storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/local-storage */ "./src/js/local-storage.js");
+/* harmony import */ var _js_search_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/search-form */ "./src/js/search-form.js");
+
 
 
 
@@ -1209,12 +1256,14 @@ __webpack_require__.r(__webpack_exports__);
 
 class App {
     init() {
-        document.getElementById('create-icon').addEventListener('click', ()=> {
+        document.getElementById('create-icon').addEventListener('click', ()=>{
             _js_writing_window__WEBPACK_IMPORTED_MODULE_1__.WritingWindow.displayWindow();
-        })
+        }
+       )
         document.getElementById('view-button').addEventListener('click', ()=> {
             _js_note_viewing_window__WEBPACK_IMPORTED_MODULE_2__.NoteViewingWindow.displayWindow(_js_local_storage__WEBPACK_IMPORTED_MODULE_3__.LocalStorage.getNotes());
         })
+        document.getElementById('arrow-button').addEventListener('click', _js_search_form__WEBPACK_IMPORTED_MODULE_4__.SearchForm.searchHandler.bind(_js_search_form__WEBPACK_IMPORTED_MODULE_4__.SearchForm))
     }
 }
 const app = new App();
@@ -1226,4 +1275,4 @@ app.init();
 
 /******/ })()
 ;
-//# sourceMappingURL=c0e48858fd82d92ce45d.js.map
+//# sourceMappingURL=bd0e496f536b4b1d1d73.js.map

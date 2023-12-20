@@ -7,7 +7,7 @@ export class LocalStorage {
     }
 
     static saveNote(noteToSave) {
-        const notes = JSON.parse(localStorage.getItem('all-notes') || '[]') ;
+        let notes = JSON.parse(localStorage.getItem('all-notes') || '[]') ;
         if(WritingWindow.noteToUpdate) {
             notes.find((noteObj)=> {
                 if(noteToSave.id === noteObj.id) {
@@ -18,9 +18,7 @@ export class LocalStorage {
             }) 
         } else {
             notes.push(noteToSave);
-           
         }
-        notes.reverse();
         localStorage.setItem('all-notes', JSON.stringify(notes));
     }
 
