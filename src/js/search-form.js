@@ -6,7 +6,7 @@ export class SearchForm {
     static searchHandler() {
         if(!document.getElementById('search-field').value.trim()) {
             const message = 'Enter a search keyword in input field';
-            AlertBox.showGenericAlertBox(message, 'alert-box__message--red', 'overlay-alert-box');
+            AlertBox.showGenericAlertBox(message, 'alert-box__message--blue-grey', 'overlay-alert-box');
             return;
         }
         const allNotes = LocalStorage.getNotes();

@@ -1,0 +1,65 @@
+.create-note {
+    &__label {
+        text-align: center;
+        font-size: 1rem;
+        color: $white;
+        font-weight: 500;
+       
+        @include breakpoint(xx-large) {
+            font-size: 1.125rem;
+        }
+    }
+
+    &__icon {
+        width: 5rem;
+        height: 5rem;
+        border: 2.5px dashed $white;
+        border-radius: 6.25rem;
+        cursor: pointer;
+        @include breakpoint(medium) {
+            width: 85px;
+            height: 85px;
+        }
+       
+        &:hover{
+            border: 2.5px dashed $transparent-white;
+        }
+    }
+
+    &__cross {
+        font-size: 1.75rem;
+        font-weight: 500;
+        color: $white;
+    }
+}
+
+.closing-cross {
+    font-size: 22px;
+    top: 0.3125rem;
+    right: 0.75rem;
+    padding: 0.3125rem;
+    font-family: monospace;
+    position: absolute;
+    cursor: pointer;
+    
+    &--dark-grey {
+        color: $dark-grey;
+        font-weight: 500;
+        &:hover {
+            color: $transparent-grey;
+        }
+    }
+
+    &--orange {
+        color: $orange;
+        font-weight: 600;
+        &:hover {
+            color: $transparent-orange;
+        }
+    }
+}
+    
+
+
+
+

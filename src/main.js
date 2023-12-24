@@ -6,14 +6,14 @@ import { SearchForm } from './js/search-form'
 
 class App {
     init() {
-        document.getElementById('create-icon').addEventListener('click', ()=>{
+        document.getElementById('create-note-icon').addEventListener('click', ()=>{
             WritingWindow.displayWindow();
         }
        )
-        document.getElementById('view-button').addEventListener('click', ()=> {
+        document.getElementById('view-note-btn').addEventListener('click', ()=> {
             NoteViewingWindow.displayWindow(LocalStorage.getNotes());
         })
-        document.getElementById('arrow-button').addEventListener('click', SearchForm.searchHandler.bind(SearchForm))
+        document.getElementById('search-btn').addEventListener('click', SearchForm.searchHandler.bind(SearchForm))
     }
 }
 const app = new App();

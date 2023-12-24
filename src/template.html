@@ -8,19 +8,19 @@
 <body>
     <main id="page-container" class="flex-col flex-col__gap50 ">
         <h1 id="app-title">My Note Handler</h1>
-        <div id="white-patch" class="white-patch flex-col flex-col__gap70">
-            <form id="search">
-                <input id="search-field" class="search-field" type="text" autocomplete="off" placeholder="Search by keyword ...">
-                <button id="arrow-button" class="arrow-button" type="button">-></button>
+        <article class="commands-container flex-col flex-col__gap70">
+            <form class="search">
+                <input id="search-field" class="search__field" type="text" autocomplete="off" placeholder="Search by keyword ...">
+                <button id="search-btn" class="search__btn" type="button">-></button>
             </form>
-            <div id="create-icon-group" class="create-icon-group flex-col flex-col__gap20">
-                <p id="create-icon-label" class="create-icon-label">Create note</p>
-                <div id="create-icon" class="create-icon flex-col">
-                    <div class="create-icon__cross">+</div>
+            <div id="create-note" class="create-note flex-col flex-col__gap20">
+                <p id="create-note-label" class="create-note__label">Create note</p>
+                <div id="create-note-icon" class="create-note__icon flex-col">
+                    <div class="create-note__cross">+</div>
                 </div>
             </div>
-            <button id="view-button" class="view-button" type="button">View all</button>
-        </div>
+            <button id="view-note-btn" class="view-note-btn" type="button">View all</button>
+        </article>
     </main>
     <template id="g-alert-template" >
         <div id="alert-box-overlay" class="alert-box-overlay flex-col">
@@ -33,7 +33,7 @@
     <template id="w-alert-template" >
         <div id="alert-box-overlay" class="alert-box-overlay flex-col">
             <div id="note-w-alert-box" class="alert-box flex-col flex-col__gap20 ">
-                <p id="alert-box-message" class="alert-box__message alert-box-message--red">Are you sure you want to delete this note?</p>
+                <p id="alert-box-message" class="alert-box__message alert-box__message--blue-grey">Are you sure you want to delete this note?</p>
                 <div class="flex-row flex-row__gap10">
                     <button id="alert-box-button-yes" class="alert-box__button" type="button">Yes</button>
                     <button id="alert-box-button-no" class="alert-box__button" type="button">No</button>

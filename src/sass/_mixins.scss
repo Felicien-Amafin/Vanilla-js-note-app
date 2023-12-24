@@ -1,0 +1,32 @@
+@mixin input-field {
+    width: 100%;
+    border-radius: 0.625rem;
+    border: 0.0625rem solid $box-shadow-light-grey;
+    outline: none;
+    padding: 0.625rem;
+    &:focus {
+        box-shadow: 0.09375rem 0.09375rem 0.1875rem $box-shadow-light-grey;
+    }
+}
+
+$breakpoints: (
+    'small': '36rem', // ≥576px
+    'medium': '48rem', // ≥768px
+    'large': '62rem', // ≥992p
+    'x-large': '75rem', // ≥1200px
+    'xx-large': '87.5rem', // ≥1400px
+);
+
+@mixin breakpoint($size) {
+	@media (min-width: map-get($breakpoints, $size)) {
+		@content;
+	}
+}
+
+@mixin overlay {
+    min-height: 100%;
+    width: 100%;
+    padding: 1.25rem;
+    position: absolute;
+    top: 0;
+}

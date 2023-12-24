@@ -12,7 +12,7 @@ export class NoteWidget {
             widget.id = "note-widget";
             widget.classList.add('note-widget', 'flex-col', 'flex-col__gap15');
             widget.innerHTML = `
-                <span id="note-widget__close-cross" class="close-cross">x</span>
+                <span id="note-widget-cross" class="closing-cross closing-cross--orange">x</span>
                 <h2 id="note-widget-title" class="note-widget__title">
                     ${note.title.substring(0, NOTE_TITLE_MAX_LENGTH )}
                     ${note.title.length > NOTE_TITLE_MAX_LENGTH ? "..." : ""}
@@ -27,7 +27,7 @@ export class NoteWidget {
                 NoteViewingWindow.removeWindow();
                 WritingWindow.displayWindow(note);
             })
-            widget.querySelector('.close-cross').addEventListener('click', (event)=> {
+            widget.querySelector('.closing-cross').addEventListener('click', (event)=> {
                 event.stopPropagation();
                 AlertBox.showWidgetAlertBox(widget, note.id);
             })

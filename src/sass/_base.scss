@@ -1,22 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@600;700&display=swap');
 //Colors
-$purple: rgb(30, 46, 77);
-$purple-transparent: rgba(30, 46, 77, 0.589);
+$blue-grey: rgb(5, 110, 114);
+$blue-grey-transparent: rgba(5, 110, 114, 0.616);
 $white: white;
+$transparent-white: rgba(255, 255, 255, 0.747);
 $box-shadow-grey: rgb(88, 85, 85);
 $box-shadow-light-grey: rgba(146, 144, 144, 0.603);
 $dark-grey: rgb(95, 93, 93);
-$overlay-window: rgb(47, 69, 114);
-$alert-box-red: rgba(247, 58, 58, 0.911);
-$alert-box-green: rgb(10, 167, 10);
+$transparent-grey: rgba(95, 93, 93, 0.514);
+$overlay-window: rgba(5, 110, 114, 0.616);
+$alert-box-green-mess: rgb(10, 167, 10);
 $overlay-alert-box:  rgba(85, 85, 85, 0.459);
-$note-widget-title: rgb(37, 35, 35);
-$note-widget-text: rgb(59, 56, 56);
-$note-widget: rgb(234, 240, 253);
-$note-widget-hover: rgb(214, 224, 245);
-$close-cross-hover: rgba(105, 103, 103, 0.473);
+$note-widget-title: white;
+$note-widget-text:yellow;
+$note-widget: rgb(129, 240, 206);
+$note-widget-hover:  rgba(129, 240, 207, 0.644);
+$transparent-orange: rgba(255, 166, 0, 0.719);
+$orange: orange;
 
 //Reset
 * {
@@ -32,7 +33,7 @@ html {
 
 body {
     min-height: 100vh;
-    background-color: $purple;
+    background-color: $blue-grey;
     position: relative;
 
     main {
@@ -44,56 +45,31 @@ body {
 //Typography
 h1 {
     font-size: 2rem;
+    font-weight: 700;
     color: $white;
-    font-family: 'Pacifico', cursive;
-    text-shadow: 0.0625rem 0.156rem 0.156rem $box-shadow-grey;
+    font-family: 'Quicksand', sans-serif;
+    @include breakpoint(medium) {
+        font-size: 2.25rem;
+    }
+    @include breakpoint(large) {
+        font-size: 2.5rem;
+    }
+    @include breakpoint(xx-large) {
+        font-size: 3rem;
+    }
 }
 
 button {
     font-size: 1rem;
     font-weight: 600;
     color: $white;
-    background-color: $purple;
+    background-color: $blue-grey;
     border: none;
 }
 
 button:hover {
-    background-color: $purple-transparent;
+    background-color: $blue-grey-transparent;
     cursor: pointer;
-}
-
-//mixins 
-@mixin input-field {
-    width: 100%;
-    border-radius: 0.625rem;
-    border: 0.0625rem solid $box-shadow-light-grey;
-    outline: none;
-    padding: 0.625rem;
-    &:focus {
-        box-shadow: 0.09375rem 0.09375rem 0.1875rem $box-shadow-light-grey;
-    }
-}
-
-@mixin overlay {
-    min-height: 100%;
-    width: 100%;
-    padding: 1.25rem;
-    position: absolute;
-    top: 0;
-}
-
-$breakpoints: (
-    'small': '36rem', // ≥576px
-    'medium': '48rem', // ≥768px
-    'large': '62rem', // ≥992p
-    'x-large': '75rem', // ≥1200px
-    'xx-large': '87.5rem', // ≥1400px
-);
-
-@mixin breakpoint($size) {
-	@media (min-width: map-get($breakpoints, $size)) {
-		@content;
-	}
 }
 
 //animations
@@ -105,3 +81,4 @@ $breakpoints: (
       transform: translateY(0);
     }
   }
+  
