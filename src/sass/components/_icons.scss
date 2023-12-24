@@ -4,7 +4,6 @@
         font-size: 1rem;
         color: $white;
         font-weight: 500;
-       
         @include breakpoint(xx-large) {
             font-size: 1.125rem;
         }
@@ -13,12 +12,12 @@
     &__icon {
         width: 5rem;
         height: 5rem;
-        border: 2.5px dashed $white;
+        border: 0.156rem dashed $white;
         border-radius: 6.25rem;
         cursor: pointer;
         @include breakpoint(medium) {
-            width: 85px;
-            height: 85px;
+            width: 5.3125rem;
+            height: 5.3125rem;
         }
        
         &:hover{
@@ -34,7 +33,7 @@
 }
 
 .closing-cross {
-    font-size: 22px;
+    font-size: 1.375rem;
     top: 0.3125rem;
     right: 0.75rem;
     padding: 0.3125rem;
@@ -50,11 +49,12 @@
         }
     }
 
-    &--orange {
-        color: $orange;
+    &--white {
+        color: $white;
         font-weight: 600;
         &:hover {
-            color: $transparent-orange;
+            color: $transparent-white;
+            /* color: $transparent-orange; */
         }
     }
 }

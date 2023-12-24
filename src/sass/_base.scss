@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@600;700&display=swap');
+
 //Colors
 $blue-grey: rgb(5, 110, 114);
 $blue-grey-transparent: rgba(5, 110, 114, 0.616);
@@ -12,12 +13,11 @@ $transparent-grey: rgba(95, 93, 93, 0.514);
 $overlay-window: rgba(5, 110, 114, 0.616);
 $alert-box-green-mess: rgb(10, 167, 10);
 $overlay-alert-box:  rgba(85, 85, 85, 0.459);
-$note-widget-title: white;
-$note-widget-text:yellow;
+$note-widget-title: rgb(5, 110, 114);
+$note-widget-text:  rgb(33, 136, 139);
 $note-widget: rgb(129, 240, 206);
 $note-widget-hover:  rgba(129, 240, 207, 0.644);
-$transparent-orange: rgba(255, 166, 0, 0.719);
-$orange: orange;
+
 
 //Reset
 * {

@@ -12,13 +12,13 @@ export class NoteWidget {
             widget.id = "note-widget";
             widget.classList.add('note-widget', 'flex-col', 'flex-col__gap15');
             widget.innerHTML = `
-                <span id="note-widget-cross" class="closing-cross closing-cross--orange">x</span>
+                <span id="note-widget-cross" class="closing-cross closing-cross--white">x</span>
                 <h2 id="note-widget-title" class="note-widget__title">
                     ${note.title.substring(0, NOTE_TITLE_MAX_LENGTH )}
                     ${note.title.length > NOTE_TITLE_MAX_LENGTH ? "..." : ""}
                 </h2>
                 <p id="note-widget-text" class="note-widget__text">
-                    ${note.text.substring(0, NOTE_TEXT_MAX_LENGTH )}
+                    ${note.text.substring(0, NOTE_TEXT_MAX_LENGTH)}
                     ${note.text.length > NOTE_TEXT_MAX_LENGTH ? "..." : ""}
                 </p>
                 <p id="note-widget-date" class="note-widget__date">${note.date}</p>         
