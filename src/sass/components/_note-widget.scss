@@ -10,26 +10,38 @@
     cursor: pointer;
     user-select: none;
     text-align: center;
+    @include breakpoint(small) {
+        max-width: 23.125rem;
+        height: 13.75rem;
+    }
     &:hover {
         background-color: $note-widget-hover;
     }
 
     &__title {
-        font-size: 1.125rem;
+        font-size: 1rem;
         font-weight: 600;
         color: $note-widget-title;
+        @include breakpoint(medium) {
+            font-size: 1.125rem;
+        }
     }
 
     &__text {
-        font-size: 1rem;
+        font-size: 0.875rem;
         color: $note-widget-text;
         font-weight: 500;
-
+        @include breakpoint(medium) {
+            font-size: 1rem;
+        }
     }
 
     &__date {
         font-size: 0.875rem;
         color: $white;
         font-weight: 500;
+        @include breakpoint(medium) {
+            font-size: 1rem;
+        }
     }
 }

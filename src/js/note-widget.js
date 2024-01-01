@@ -5,7 +5,7 @@ import { AlertBox } from "./alert-box";
 
 export class NoteWidget {
     static addNoteWidgets(notes) {
-        const NOTE_TITLE_MAX_LENGTH = 25;
+        const NOTE_TITLE_MAX_LENGTH = 35;
         const NOTE_TEXT_MAX_LENGTH  = 30;
         notes.forEach((note) => {
             const widget = document.createElement('li');
