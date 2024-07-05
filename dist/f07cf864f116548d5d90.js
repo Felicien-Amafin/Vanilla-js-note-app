@@ -1154,7 +1154,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class SearchForm {
-    static searchHandler() {
+    static searchHandler(event) {
+        event.preventDefault();
         if(!document.getElementById('search-field').value.trim()) {
             const message = 'Enter a search keyword in input field';
             _alert_box__WEBPACK_IMPORTED_MODULE_0__.AlertBox.showGenericAlertBox(message, 'alert-box__message--blue-grey', 'overlay-alert-box');
@@ -1362,14 +1363,13 @@ __webpack_require__.r(__webpack_exports__);
 
 class App {
     init() {
+        document.getElementById('search').addEventListener('submit', _js_search_form__WEBPACK_IMPORTED_MODULE_4__.SearchForm.searchHandler.bind(_js_search_form__WEBPACK_IMPORTED_MODULE_4__.SearchForm));
         document.getElementById('create-note-icon').addEventListener('click', ()=>{
             _js_writing_window__WEBPACK_IMPORTED_MODULE_1__.WritingWindow.displayWindow();
-        }
-       )
+        })
         document.getElementById('view-note-btn').addEventListener('click', ()=> {
             _js_note_viewing_window__WEBPACK_IMPORTED_MODULE_2__.NoteViewingWindow.displayWindow(_js_local_storage__WEBPACK_IMPORTED_MODULE_3__.LocalStorage.getNotes());
         })
-        document.getElementById('search-btn').addEventListener('click', _js_search_form__WEBPACK_IMPORTED_MODULE_4__.SearchForm.searchHandler.bind(_js_search_form__WEBPACK_IMPORTED_MODULE_4__.SearchForm))
     }
 }
 const app = new App();
@@ -1381,4 +1381,4 @@ app.init();
 
 /******/ })()
 ;
-//# sourceMappingURL=ee6331f38e8c32a61096.js.map
+//# sourceMappingURL=f07cf864f116548d5d90.js.map

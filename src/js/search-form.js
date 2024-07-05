@@ -3,7 +3,8 @@ import { LocalStorage } from "./local-storage";
 import { NoteViewingWindow } from "./note-viewing-window";
 
 export class SearchForm {
-    static searchHandler() {
+    static searchHandler(event) {
+        event.preventDefault();
         if(!document.getElementById('search-field').value.trim()) {
             const message = 'Enter a search keyword in input field';
             AlertBox.showGenericAlertBox(message, 'alert-box__message--blue-grey', 'overlay-alert-box');
