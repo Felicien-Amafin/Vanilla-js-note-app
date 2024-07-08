@@ -1,0 +1,21 @@
+.window {
+    width: 90%;
+    min-height: 80vh;
+    background-color: $window;
+    border-radius: 10px;
+    animation: fade-slide-in 0.6s ease-out forwards;
+    @include breakpoint(small) { height: 85vh; }
+
+    &__writing {
+        @include flex-column-center;
+        height: 80vh;
+        max-width: 31.25rem;
+    }
+
+    &__note-viewing {
+        @include flex-column;
+        min-height: 80vh;
+        padding: 2.8125rem;
+        @include breakpoint(large) { min-height: 90vh; }
+    }
+}

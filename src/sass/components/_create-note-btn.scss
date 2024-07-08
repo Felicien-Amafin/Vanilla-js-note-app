@@ -1,4 +1,6 @@
 .create-note {
+    @include flex-column-center;
+    gap: 20px;
     &__label {
         text-align: center;
         font-size: 1rem;
@@ -10,6 +12,7 @@
     }
 
     &__icon {
+        @include flex-column-center;
         width: 5rem;
         height: 5rem;
         border: 0.156rem dashed $white;
@@ -31,34 +34,3 @@
         color: $white;
     }
 }
-
-.closing-cross {
-    font-size: 1.375rem;
-    top: 0.3125rem;
-    right: 0.75rem;
-    padding: 0.3125rem;
-    font-family: monospace;
-    position: absolute;
-    cursor: pointer;
-    
-    &--dark-grey {
-        color: $dark-grey;
-        font-weight: 500;
-        &:hover {
-            color: $transparent-grey;
-        }
-    }
-
-    &--white {
-        color: $white;
-        font-weight: 600;
-        &:hover {
-            color: $transparent-white;
-        }
-    }
-}
-    
-
-
-
-

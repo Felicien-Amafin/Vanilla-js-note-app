@@ -5,14 +5,16 @@ import { AlertBox } from "./alert-box";
 
 export class NoteWidget {
     static addNoteWidgets(notes) {
-        const NOTE_TITLE_MAX_LENGTH = 35;
-        const NOTE_TEXT_MAX_LENGTH  = 30;
+        const NOTE_TITLE_MAX_LENGTH = 25;
+        const NOTE_TEXT_MAX_LENGTH  = 20;
         notes.forEach((note) => {
             const widget = document.createElement('li');
             widget.id = "note-widget";
-            widget.classList.add('note-widget', 'flex-col', 'flex-col__gap15');
+            widget.classList.add('note-widget');
             widget.innerHTML = `
-                <span id="note-widget-cross" class="closing-cross closing-cross--white">x</span>
+                <span id="delete-widget" class="note-widget__icon">
+                    <i class="fa-regular fa-trash-can"></i>
+                </span>
                 <h2 id="note-widget-title" class="note-widget__title">
                     ${note.title.substring(0, NOTE_TITLE_MAX_LENGTH )}
                     ${note.title.length > NOTE_TITLE_MAX_LENGTH ? "..." : ""}
@@ -27,7 +29,7 @@ export class NoteWidget {
                 NoteViewingWindow.removeWindow();
                 WritingWindow.displayWindow(note);
             })
-            widget.querySelector('.closing-cross').addEventListener('click', (event)=> {
+            widget.querySelector('#delete-widget').addEventListener('click', (event)=> {
                 event.stopPropagation();
                 AlertBox.showWidgetAlertBox(widget, note.id);
             })

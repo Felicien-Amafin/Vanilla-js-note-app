@@ -1,8 +1,10 @@
 .alert-box {
+    @include flex-column-center;
+    text-align: center;
+    gap: 20px;
     width: 75%;
     height: 25%;
     padding: 1.5625rem;
-    text-align: center;
     line-height: 1.25rem;
     border-radius: 1.25rem;
     background-color: $white;
@@ -13,12 +15,8 @@
         width: 60%;
         height: 30%;
     }
-    @include breakpoint(medium) {
-        width: 40%;
-    }
-    @include breakpoint(large) {
-        width: 30%;
-    }
+    @include breakpoint(medium) { width: 40%; }
+    @include breakpoint(large) { width: 30%; }
 
     &__message {
         font-size: 0.875rem;
@@ -30,15 +28,18 @@
         color: $alert-box-green-mess;
     }
 
-    &__message--blue-grey {
-        color: $blue-grey;
+    &__message--blue {
+        color: $blue;
     }
-
+    &__flex-row { 
+        @include flex-row;
+        gap: 10px;
+    }
     &__button {
         width: 3.75rem;
         height: 2.8125rem;
         border-radius: 3.125rem;
-        background-color: $blue-grey;
+        background-color: $blue;
         color: $white;
         font-size: 0.875rem;
         font-weight: 600;

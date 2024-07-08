@@ -1,0 +1,10 @@
+.overlay {
+    @include flex-column-center;
+    position: fixed;
+    inset: 0 0 0 0;
+    padding: 1.25rem;
+    background-color: $overlay-window;
+    
+    &--window { z-index: 2000; }
+    &--alert-box { z-index: 4000; }
+}

@@ -16,12 +16,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../../../src/img/bckGround.jpg */ "./src/img/bckGround.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@600;700&display=swap);"]);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `* {
   box-sizing: border-box;
@@ -35,13 +40,20 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   min-height: 100vh;
-  background-color: rgb(5, 110, 114);
-  position: relative;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+  background-position: 15% 10%;
 }
-body main {
-  min-height: 100vh;
-  padding: 1.875rem;
+body footer {
+  width: 100%;
+  text-align: center;
+  padding-top: 15px;
+  font-size: 0.875rem;
+  background-color: transparent;
+  color: white;
 }
 
 h1 {
@@ -49,6 +61,7 @@ h1 {
   font-weight: 700;
   color: white;
   font-family: "Quicksand", sans-serif;
+  text-align: center;
 }
 @media (min-width: 48rem) {
   h1 {
@@ -70,12 +83,12 @@ button {
   font-size: 1rem;
   font-weight: 600;
   color: white;
-  background-color: rgb(5, 110, 114);
+  background-color: rgb(34, 68, 121);
   border: none;
 }
 
 button:hover {
-  background-color: rgba(5, 110, 114, 0.616);
+  background-color: rgba(3, 71, 73, 0.616);
   cursor: pointer;
 }
 
@@ -87,93 +100,16 @@ button:hover {
     transform: translateY(0);
   }
 }
-.flex-col {
+.alert-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.flex-col__gap15 {
-  gap: 0.9375rem;
-}
-.flex-col__gap20 {
-  gap: 1.25rem;
-}
-.flex-col__gap50 {
-  gap: 5.625rem;
-}
-.flex-col__gap70 {
-  gap: 4.375rem;
-}
-
-.flex-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.flex-row__gap10 {
-  gap: 0.625rem;
-}
-
-.widgets-list {
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-  overflow-x: hidden;
-  display: grid;
-  align-items: center;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  gap: 1.25rem;
-  padding: 0.625rem;
-}
-@media (min-width: 48rem) {
-  .widgets-list {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (min-width: 62rem) {
-  .widgets-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media (min-width: 75rem) {
-  .widgets-list {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.commands-container {
-  width: 100%;
-  padding: 1rem;
-}
-
-.window-overlay {
-  min-height: 100%;
-  width: 100%;
-  padding: 1.25rem;
-  position: absolute;
-  top: 0;
-  z-index: 2000;
-  background-color: rgba(5, 110, 114, 0.616);
-}
-
-.alert-box-overlay {
-  min-height: 100%;
-  width: 100%;
-  padding: 1.25rem;
-  position: absolute;
-  top: 0;
-  z-index: 4000;
-  background-color: rgba(85, 85, 85, 0.459);
-}
-
-.alert-box {
+  text-align: center;
+  gap: 20px;
   width: 75%;
   height: 25%;
   padding: 1.5625rem;
-  text-align: center;
   line-height: 1.25rem;
   border-radius: 1.25rem;
   background-color: white;
@@ -205,25 +141,91 @@ button:hover {
 .alert-box__message--green-mess {
   color: rgb(10, 167, 10);
 }
-.alert-box__message--blue-grey {
-  color: rgb(5, 110, 114);
+.alert-box__message--blue {
+  color: rgb(34, 68, 121);
+}
+.alert-box__flex-row {
+  display: flex;
+  gap: 10px;
 }
 .alert-box__button {
   width: 3.75rem;
   height: 2.8125rem;
   border-radius: 3.125rem;
-  background-color: rgb(5, 110, 114);
+  background-color: rgb(34, 68, 121);
   color: white;
   font-size: 0.875rem;
   font-weight: 600;
 }
 
+.closing-cross {
+  font-size: 1.375rem;
+  top: 0.3125rem;
+  right: 0.75rem;
+  padding: 0.3125rem;
+  font-family: monospace;
+  position: absolute;
+  cursor: pointer;
+}
+.closing-cross--dark-grey {
+  color: rgb(95, 93, 93);
+  font-weight: 500;
+}
+.closing-cross--dark-grey:hover {
+  color: rgba(95, 93, 93, 0.514);
+}
+
+.create-note {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.create-note__label {
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+}
+@media (min-width: 87.5rem) {
+  .create-note__label {
+    font-size: 1.125rem;
+  }
+}
+.create-note__icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  border: 0.156rem dashed white;
+  border-radius: 6.25rem;
+  cursor: pointer;
+}
+@media (min-width: 48rem) {
+  .create-note__icon {
+    width: 5.3125rem;
+    height: 5.3125rem;
+  }
+}
+.create-note__icon:hover {
+  border: 2.5px dashed rgba(255, 255, 255, 0.747);
+}
+.create-note__cross {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: white;
+}
+
 .view-note-btn {
   width: 6.25rem;
   height: 3.125rem;
+  margin: auto;
   border-radius: 1.625rem;
   background-color: white;
-  color: rgb(5, 110, 114);
+  color: rgb(34, 68, 121);
   font-size: 0.875rem;
 }
 @media (min-width: 48rem) {
@@ -237,26 +239,17 @@ button:hover {
   background-color: rgba(255, 255, 255, 0.747);
 }
 
-.search {
+.search-bubble {
   display: flex;
-  width: min(100%, 400px);
-  background-color: white;
-  border-radius: 1.875rem;
+  width: min(90%, 400px);
   justify-content: space-around;
   align-items: center;
-  height: 2.5rem;
+  height: 3.125rem;
+  margin: auto;
+  background-color: white;
+  border-radius: 1.875rem;
 }
-@media (min-width: 36rem) {
-  .search {
-    height: 2.8125rem;
-  }
-}
-@media (min-width: 48rem) {
-  .search {
-    height: 3.125rem;
-  }
-}
-.search__field {
+.search-bubble__field {
   border-radius: 1.875rem;
   width: 80%;
   height: 100%;
@@ -265,28 +258,32 @@ button:hover {
   padding: 0.875rem;
   border: none;
 }
-.search__btn {
+.search-bubble__btn {
   font-size: 1.125rem;
   height: 1.875rem;
   width: 1.875rem;
   border-radius: 100%;
   color: white;
-  background-color: rgb(5, 110, 114);
+  background-color: rgb(34, 68, 121);
 }
 @media (min-width: 36rem) {
-  .search__btn {
+  .search-bubble__btn {
     height: 2.1875rem;
     width: 2.1875rem;
   }
 }
 @media (min-width: 48rem) {
-  .search__btn {
+  .search-bubble__btn {
     height: 2.5rem;
     width: 2.5rem;
   }
 }
 
 .writing-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-height: 90%;
   min-width: 85%;
   margin-top: 1.375rem;
@@ -332,89 +329,35 @@ button:hover {
   }
 }
 
-.create-note__label {
-  text-align: center;
-  font-size: 1rem;
-  color: white;
-  font-weight: 500;
-}
-@media (min-width: 87.5rem) {
-  .create-note__label {
-    font-size: 1.125rem;
-  }
-}
-.create-note__icon {
-  width: 5rem;
-  height: 5rem;
-  border: 0.156rem dashed white;
-  border-radius: 6.25rem;
-  cursor: pointer;
-}
-@media (min-width: 48rem) {
-  .create-note__icon {
-    width: 5.3125rem;
-    height: 5.3125rem;
-  }
-}
-.create-note__icon:hover {
-  border: 2.5px dashed rgba(255, 255, 255, 0.747);
-}
-.create-note__cross {
-  font-size: 1.75rem;
-  font-weight: 500;
-  color: white;
-}
-
-.closing-cross {
-  font-size: 1.375rem;
-  top: 0.3125rem;
-  right: 0.75rem;
-  padding: 0.3125rem;
-  font-family: monospace;
-  position: absolute;
-  cursor: pointer;
-}
-.closing-cross--dark-grey {
-  color: rgb(95, 93, 93);
-  font-weight: 500;
-}
-.closing-cross--dark-grey:hover {
-  color: rgba(95, 93, 93, 0.514);
-}
-.closing-cross--white {
-  color: white;
-  font-weight: 600;
-}
-.closing-cross--white:hover {
-  color: rgba(255, 255, 255, 0.747);
-}
-
 .note-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   width: 100%;
-  height: 12.5rem;
+  min-height: 12.5rem;
   padding: 1.875rem;
-  background-color: rgb(129, 240, 206);
   margin: auto;
   max-width: 21.875rem;
-  border-radius: 1.875rem;
-  position: relative;
+  border-radius: 15px;
   cursor: pointer;
   user-select: none;
   text-align: center;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 3px 7px 1px lightgray;
 }
 @media (min-width: 36rem) {
   .note-widget {
     max-width: 23.125rem;
-    height: 13.75rem;
+    min-height: 13.75rem;
   }
 }
 .note-widget:hover {
-  background-color: rgba(129, 240, 207, 0.644);
+  background-color: rgba(160, 213, 229, 0.473);
 }
 .note-widget__title {
   font-size: 1rem;
   font-weight: 600;
-  color: rgb(5, 110, 114);
+  color: rgb(58, 57, 57);
 }
 @media (min-width: 48rem) {
   .note-widget__title {
@@ -423,7 +366,7 @@ button:hover {
 }
 .note-widget__text {
   font-size: 0.875rem;
-  color: rgb(33, 136, 139);
+  color: rgb(87, 85, 85);
   font-weight: 500;
 }
 @media (min-width: 48rem) {
@@ -433,7 +376,7 @@ button:hover {
 }
 .note-widget__date {
   font-size: 0.875rem;
-  color: white;
+  color: black;
   font-weight: 500;
 }
 @media (min-width: 48rem) {
@@ -441,12 +384,72 @@ button:hover {
     font-size: 1rem;
   }
 }
+.note-widget__icon {
+  color: rgb(78, 77, 77);
+}
+.note-widget__icon:hover {
+  color: rgba(126, 123, 123, 0.856);
+}
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0 0 0 0;
+  padding: 1.25rem;
+  background-color: rgba(71, 70, 70, 0.253);
+}
+.overlay--window {
+  z-index: 2000;
+}
+.overlay--alert-box {
+  z-index: 4000;
+}
+
+.tools {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+  height: 100%;
+  padding: 40px 16px 16px 16px;
+}
+
+.widgets-list {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 1.25rem;
+  padding: 0.625rem;
+}
+@media (min-width: 48rem) {
+  .widgets-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 62rem) {
+  .widgets-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 75rem) {
+  .widgets-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
 .window {
-  height: 80vh;
-  width: 95%;
-  background-color: white;
-  border-radius: 0.9375rem;
+  width: 90%;
+  min-height: 80vh;
+  background-color: rgb(240, 238, 238);
+  border-radius: 10px;
   animation: fade-slide-in 0.6s ease-out forwards;
 }
 @media (min-width: 36rem) {
@@ -454,17 +457,25 @@ button:hover {
     height: 85vh;
   }
 }
-.window--writing {
+.window__writing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
   max-width: 31.25rem;
 }
-.window--note-viewing {
+.window__note-viewing {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
   padding: 2.8125rem;
 }
 @media (min-width: 62rem) {
-  .window--note-viewing {
-    width: 90%;
+  .window__note-viewing {
+    min-height: 90vh;
   }
-}`, "",{"version":3,"sources":["webpack://./src/sass/_base.scss","webpack://./src/sass/main.scss","webpack://./src/sass/_mixins.scss","webpack://./src/sass/_layout.scss","webpack://./src/sass/_containers.scss","webpack://./src/sass/components/_alert-box.scss","webpack://./src/sass/components/_button.scss","webpack://./src/sass/components/_forms.scss","webpack://./src/sass/components/_icons.scss","webpack://./src/sass/components/_note-widget.scss","webpack://./src/sass/components/_windows.scss"],"names":[],"mappings":"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","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');\r\n@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@600;700&display=swap');\r\n\r\n//Colors\r\n$blue-grey: rgb(5, 110, 114);\r\n$blue-grey-transparent: rgba(5, 110, 114, 0.616);\r\n$white: white;\r\n$transparent-white: rgba(255, 255, 255, 0.747);\r\n$box-shadow-grey: rgb(88, 85, 85);\r\n$box-shadow-light-grey: rgba(146, 144, 144, 0.603);\r\n$dark-grey: rgb(95, 93, 93);\r\n$transparent-grey: rgba(95, 93, 93, 0.514);\r\n$overlay-window: rgba(5, 110, 114, 0.616);\r\n$alert-box-green-mess: rgb(10, 167, 10);\r\n$overlay-alert-box:  rgba(85, 85, 85, 0.459);\r\n$note-widget-title: rgb(5, 110, 114);\r\n$note-widget-text:  rgb(33, 136, 139);\r\n$note-widget: rgb(129, 240, 206);\r\n$note-widget-hover:  rgba(129, 240, 207, 0.644);\r\n\r\n\r\n//Reset\r\n* {\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n    font-family: 'Manrope', sans-serif;\r\n}\r\n\r\nhtml {\r\n    font-size: 100%;\r\n}\r\n\r\nbody {\r\n    min-height: 100vh;\r\n    background-color: $blue-grey;\r\n    position: relative;\r\n\r\n    main {\r\n        min-height: 100vh;\r\n        padding: 1.875rem;\r\n    }\r\n}\r\n\r\n//Typography\r\nh1 {\r\n    font-size: 2rem;\r\n    font-weight: 700;\r\n    color: $white;\r\n    font-family: 'Quicksand', sans-serif;\r\n    @include breakpoint(medium) {\r\n        font-size: 2.25rem;\r\n    }\r\n    @include breakpoint(large) {\r\n        font-size: 2.5rem;\r\n    }\r\n    @include breakpoint(xx-large) {\r\n        font-size: 3rem;\r\n    }\r\n}\r\n\r\nbutton {\r\n    font-size: 1rem;\r\n    font-weight: 600;\r\n    color: $white;\r\n    background-color: $blue-grey;\r\n    border: none;\r\n}\r\n\r\nbutton:hover {\r\n    background-color: $blue-grey-transparent;\r\n    cursor: pointer;\r\n}\r\n\r\n//animations\r\n@keyframes fade-slide-in {\r\n    from {\r\n      transform: translateY(-5rem);\r\n    }\r\n    to {\r\n      transform: translateY(0);\r\n    }\r\n  }\r\n  ","@import url(\"https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap\");\n@import url(\"https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@600;700&display=swap\");\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-family: \"Manrope\", sans-serif;\n}\n\nhtml {\n  font-size: 100%;\n}\n\nbody {\n  min-height: 100vh;\n  background-color: rgb(5, 110, 114);\n  position: relative;\n}\nbody main {\n  min-height: 100vh;\n  padding: 1.875rem;\n}\n\nh1 {\n  font-size: 2rem;\n  font-weight: 700;\n  color: white;\n  font-family: \"Quicksand\", sans-serif;\n}\n@media (min-width: 48rem) {\n  h1 {\n    font-size: 2.25rem;\n  }\n}\n@media (min-width: 62rem) {\n  h1 {\n    font-size: 2.5rem;\n  }\n}\n@media (min-width: 87.5rem) {\n  h1 {\n    font-size: 3rem;\n  }\n}\n\nbutton {\n  font-size: 1rem;\n  font-weight: 600;\n  color: white;\n  background-color: rgb(5, 110, 114);\n  border: none;\n}\n\nbutton:hover {\n  background-color: rgba(5, 110, 114, 0.616);\n  cursor: pointer;\n}\n\n@keyframes fade-slide-in {\n  from {\n    transform: translateY(-5rem);\n  }\n  to {\n    transform: translateY(0);\n  }\n}\n.flex-col {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n.flex-col__gap15 {\n  gap: 0.9375rem;\n}\n.flex-col__gap20 {\n  gap: 1.25rem;\n}\n.flex-col__gap50 {\n  gap: 5.625rem;\n}\n.flex-col__gap70 {\n  gap: 4.375rem;\n}\n\n.flex-row {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n}\n.flex-row__gap10 {\n  gap: 0.625rem;\n}\n\n.widgets-list {\n  width: 100%;\n  height: 100%;\n  overflow: scroll;\n  overflow-x: hidden;\n  display: grid;\n  align-items: center;\n  grid-template-columns: 1fr;\n  grid-template-rows: auto;\n  gap: 1.25rem;\n  padding: 0.625rem;\n}\n@media (min-width: 48rem) {\n  .widgets-list {\n    grid-template-columns: 1fr 1fr;\n  }\n}\n@media (min-width: 62rem) {\n  .widgets-list {\n    grid-template-columns: repeat(3, 1fr);\n  }\n}\n@media (min-width: 75rem) {\n  .widgets-list {\n    grid-template-columns: repeat(4, 1fr);\n  }\n}\n\n.commands-container {\n  width: 100%;\n  padding: 1rem;\n}\n\n.window-overlay {\n  min-height: 100%;\n  width: 100%;\n  padding: 1.25rem;\n  position: absolute;\n  top: 0;\n  z-index: 2000;\n  background-color: rgba(5, 110, 114, 0.616);\n}\n\n.alert-box-overlay {\n  min-height: 100%;\n  width: 100%;\n  padding: 1.25rem;\n  position: absolute;\n  top: 0;\n  z-index: 4000;\n  background-color: rgba(85, 85, 85, 0.459);\n}\n\n.alert-box {\n  width: 75%;\n  height: 25%;\n  padding: 1.5625rem;\n  text-align: center;\n  line-height: 1.25rem;\n  border-radius: 1.25rem;\n  background-color: white;\n  z-index: 100000;\n  box-shadow: 0.09375rem 0.09375rem 0.1875rem rgba(146, 144, 144, 0.603);\n  animation: fade-slide-in 0.3s ease-out forwards;\n}\n@media (min-width: 36rem) {\n  .alert-box {\n    width: 60%;\n    height: 30%;\n  }\n}\n@media (min-width: 48rem) {\n  .alert-box {\n    width: 40%;\n  }\n}\n@media (min-width: 62rem) {\n  .alert-box {\n    width: 30%;\n  }\n}\n.alert-box__message {\n  font-size: 0.875rem;\n  font-weight: 600;\n  line-height: 1.5625rem;\n}\n.alert-box__message--green-mess {\n  color: rgb(10, 167, 10);\n}\n.alert-box__message--blue-grey {\n  color: rgb(5, 110, 114);\n}\n.alert-box__button {\n  width: 3.75rem;\n  height: 2.8125rem;\n  border-radius: 3.125rem;\n  background-color: rgb(5, 110, 114);\n  color: white;\n  font-size: 0.875rem;\n  font-weight: 600;\n}\n\n.view-note-btn {\n  width: 6.25rem;\n  height: 3.125rem;\n  border-radius: 1.625rem;\n  background-color: white;\n  color: rgb(5, 110, 114);\n  font-size: 0.875rem;\n}\n@media (min-width: 48rem) {\n  .view-note-btn {\n    width: 6.5625rem;\n    height: 3.4375rem;\n    border-radius: 1.75rem;\n  }\n}\n.view-note-btn:hover {\n  background-color: rgba(255, 255, 255, 0.747);\n}\n\n.search {\n  display: flex;\n  width: min(100%, 400px);\n  background-color: white;\n  border-radius: 1.875rem;\n  justify-content: space-around;\n  align-items: center;\n  height: 2.5rem;\n}\n@media (min-width: 36rem) {\n  .search {\n    height: 2.8125rem;\n  }\n}\n@media (min-width: 48rem) {\n  .search {\n    height: 3.125rem;\n  }\n}\n.search__field {\n  border-radius: 1.875rem;\n  width: 80%;\n  height: 100%;\n  background-color: white;\n  outline: none;\n  padding: 0.875rem;\n  border: none;\n}\n.search__btn {\n  font-size: 1.125rem;\n  height: 1.875rem;\n  width: 1.875rem;\n  border-radius: 100%;\n  color: white;\n  background-color: rgb(5, 110, 114);\n}\n@media (min-width: 36rem) {\n  .search__btn {\n    height: 2.1875rem;\n    width: 2.1875rem;\n  }\n}\n@media (min-width: 48rem) {\n  .search__btn {\n    height: 2.5rem;\n    width: 2.5rem;\n  }\n}\n\n.writing-area {\n  min-height: 90%;\n  min-width: 85%;\n  margin-top: 1.375rem;\n}\n.writing-area__title {\n  width: 100%;\n  border-radius: 0.625rem;\n  border: 0.0625rem solid rgba(146, 144, 144, 0.603);\n  outline: none;\n  padding: 0.625rem;\n  height: 10%;\n  margin-bottom: 0.9375rem;\n  font-weight: 600;\n}\n.writing-area__title:focus {\n  box-shadow: 0.09375rem 0.09375rem 0.1875rem rgba(146, 144, 144, 0.603);\n}\n.writing-area__text {\n  width: 100%;\n  border-radius: 0.625rem;\n  border: 0.0625rem solid rgba(146, 144, 144, 0.603);\n  outline: none;\n  padding: 0.625rem;\n  height: 100%;\n  font-weight: 500;\n  margin-bottom: 0.9375rem;\n}\n.writing-area__text:focus {\n  box-shadow: 0.09375rem 0.09375rem 0.1875rem rgba(146, 144, 144, 0.603);\n}\n.writing-area__btn {\n  height: 3.125rem;\n  width: 5rem;\n  border-radius: 1.125rem;\n  font-size: 0.875rem;\n  outline: none;\n}\n@media (min-width: 48rem) {\n  .writing-area__btn {\n    height: 3.4375rem;\n    width: 5.3125rem;\n    border-radius: 1.25rem;\n  }\n}\n\n.create-note__label {\n  text-align: center;\n  font-size: 1rem;\n  color: white;\n  font-weight: 500;\n}\n@media (min-width: 87.5rem) {\n  .create-note__label {\n    font-size: 1.125rem;\n  }\n}\n.create-note__icon {\n  width: 5rem;\n  height: 5rem;\n  border: 0.156rem dashed white;\n  border-radius: 6.25rem;\n  cursor: pointer;\n}\n@media (min-width: 48rem) {\n  .create-note__icon {\n    width: 5.3125rem;\n    height: 5.3125rem;\n  }\n}\n.create-note__icon:hover {\n  border: 2.5px dashed rgba(255, 255, 255, 0.747);\n}\n.create-note__cross {\n  font-size: 1.75rem;\n  font-weight: 500;\n  color: white;\n}\n\n.closing-cross {\n  font-size: 1.375rem;\n  top: 0.3125rem;\n  right: 0.75rem;\n  padding: 0.3125rem;\n  font-family: monospace;\n  position: absolute;\n  cursor: pointer;\n}\n.closing-cross--dark-grey {\n  color: rgb(95, 93, 93);\n  font-weight: 500;\n}\n.closing-cross--dark-grey:hover {\n  color: rgba(95, 93, 93, 0.514);\n}\n.closing-cross--white {\n  color: white;\n  font-weight: 600;\n}\n.closing-cross--white:hover {\n  color: rgba(255, 255, 255, 0.747);\n}\n\n.note-widget {\n  width: 100%;\n  height: 12.5rem;\n  padding: 1.875rem;\n  background-color: rgb(129, 240, 206);\n  margin: auto;\n  max-width: 21.875rem;\n  border-radius: 1.875rem;\n  position: relative;\n  cursor: pointer;\n  user-select: none;\n  text-align: center;\n}\n@media (min-width: 36rem) {\n  .note-widget {\n    max-width: 23.125rem;\n    height: 13.75rem;\n  }\n}\n.note-widget:hover {\n  background-color: rgba(129, 240, 207, 0.644);\n}\n.note-widget__title {\n  font-size: 1rem;\n  font-weight: 600;\n  color: rgb(5, 110, 114);\n}\n@media (min-width: 48rem) {\n  .note-widget__title {\n    font-size: 1.125rem;\n  }\n}\n.note-widget__text {\n  font-size: 0.875rem;\n  color: rgb(33, 136, 139);\n  font-weight: 500;\n}\n@media (min-width: 48rem) {\n  .note-widget__text {\n    font-size: 1rem;\n  }\n}\n.note-widget__date {\n  font-size: 0.875rem;\n  color: white;\n  font-weight: 500;\n}\n@media (min-width: 48rem) {\n  .note-widget__date {\n    font-size: 1rem;\n  }\n}\n\n.window {\n  height: 80vh;\n  width: 95%;\n  background-color: white;\n  border-radius: 0.9375rem;\n  animation: fade-slide-in 0.6s ease-out forwards;\n}\n@media (min-width: 36rem) {\n  .window {\n    height: 85vh;\n  }\n}\n.window--writing {\n  max-width: 31.25rem;\n}\n.window--note-viewing {\n  padding: 2.8125rem;\n}\n@media (min-width: 62rem) {\n  .window--note-viewing {\n    width: 90%;\n  }\n}","@mixin input-field {\r\n    width: 100%;\r\n    border-radius: 0.625rem;\r\n    border: 0.0625rem solid $box-shadow-light-grey;\r\n    outline: none;\r\n    padding: 0.625rem;\r\n    &:focus {\r\n        box-shadow: 0.09375rem 0.09375rem 0.1875rem $box-shadow-light-grey;\r\n    }\r\n}\r\n\r\n$breakpoints: (\r\n    'small': '36rem', // ≥576px\r\n    'medium': '48rem', // ≥768px\r\n    'large': '62rem', // ≥992p\r\n    'x-large': '75rem', // ≥1200px\r\n    'xx-large': '87.5rem', // ≥1400px\r\n);\r\n\r\n@mixin breakpoint($size) {\r\n\t@media (min-width: map-get($breakpoints, $size)) {\r\n\t\t@content;\r\n\t}\r\n}\r\n\r\n@mixin overlay {\r\n    min-height: 100%;\r\n    width: 100%;\r\n    padding: 1.25rem;\r\n    position: absolute;\r\n    top: 0;\r\n}",".flex-col{\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    \r\n    &__gap15 {\r\n        gap: 0.9375rem;\r\n    }\r\n\r\n    &__gap20 {\r\n        gap: 1.25rem;\r\n    }\r\n\r\n    &__gap50 {\r\n        gap: 5.625rem;\r\n    }\r\n\r\n    &__gap70 {\r\n        gap: 4.375rem;\r\n    }\r\n}\r\n\r\n.flex-row {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    &__gap10 {\r\n        gap: 0.625rem;\r\n    }\r\n}\r\n\r\n.widgets-list {\r\n    width: 100%;\r\n    height: 100%;\r\n    overflow: scroll;\r\n    overflow-x: hidden;\r\n    display: grid;\r\n    align-items: center;\r\n    grid-template-columns: 1fr;\r\n    grid-template-rows: auto;\r\n    gap: 1.25rem;\r\n    padding: 0.625rem;\r\n    @include breakpoint(medium) {\r\n     grid-template-columns: 1fr 1fr;\r\n    }\r\n    @include breakpoint(large) {\r\n     grid-template-columns: repeat(3, 1fr);\r\n    }\r\n    @include breakpoint(x-large) {\r\n     grid-template-columns: repeat(4, 1fr);\r\n    }\r\n}",".commands-container {\r\n    width: 100%;\r\n    padding: 1rem;\r\n}\r\n\r\n.window-overlay {\r\n    @include overlay;\r\n    z-index: 2000;\r\n    background-color: $overlay-window;\r\n}\r\n\r\n.alert-box-overlay {\r\n    @include overlay;\r\n    z-index: 4000;\r\n    background-color: $overlay-alert-box;\r\n}",".alert-box {\r\n    width: 75%;\r\n    height: 25%;\r\n    padding: 1.5625rem;\r\n    text-align: center;\r\n    line-height: 1.25rem;\r\n    border-radius: 1.25rem;\r\n    background-color: $white;\r\n    z-index: 100000;\r\n    box-shadow: 0.09375rem 0.09375rem 0.1875rem $box-shadow-light-grey;\r\n    animation: fade-slide-in 0.3s ease-out forwards;\r\n    @include breakpoint(small) {\r\n        width: 60%;\r\n        height: 30%;\r\n    }\r\n    @include breakpoint(medium) {\r\n        width: 40%;\r\n    }\r\n    @include breakpoint(large) {\r\n        width: 30%;\r\n    }\r\n\r\n    &__message {\r\n        font-size: 0.875rem;\r\n        font-weight: 600;\r\n        line-height: 1.5625rem;\r\n    }\r\n\r\n    &__message--green-mess {\r\n        color: $alert-box-green-mess;\r\n    }\r\n\r\n    &__message--blue-grey {\r\n        color: $blue-grey;\r\n    }\r\n\r\n    &__button {\r\n        width: 3.75rem;\r\n        height: 2.8125rem;\r\n        border-radius: 3.125rem;\r\n        background-color: $blue-grey;\r\n        color: $white;\r\n        font-size: 0.875rem;\r\n        font-weight: 600;\r\n    }\r\n}",".view-note-btn {\r\n    width: 6.25rem;\r\n    height: 3.125rem;\r\n    border-radius: 1.625rem;\r\n    background-color: $white;\r\n    color: $blue-grey;\r\n    font-size: 0.875rem;\r\n    @include breakpoint(medium) {\r\n        width: 6.5625rem;\r\n        height: 3.4375rem;\r\n        border-radius: 1.75rem;\r\n    }\r\n    &:hover {\r\n        background-color: $transparent-white;\r\n    }\r\n}\r\n\r\n",".search {\r\n    display: flex;\r\n    width: min(100%, 400px);\r\n    background-color: $white;\r\n    border-radius: 1.875rem;\r\n    justify-content: space-around;\r\n    align-items: center;\r\n    height: 2.5rem;\r\n    @include breakpoint(small) {\r\n        height: 2.8125rem;\r\n    }\r\n    @include breakpoint(medium) {\r\n        height: 3.125rem;\r\n    }\r\n\r\n    &__field {\r\n        border-radius: 1.875rem;\r\n        width: 80%;\r\n        height: 100%;\r\n        background-color: $white;\r\n        outline: none;\r\n        padding: 0.875rem;\r\n        border: none;\r\n    }\r\n\r\n    &__btn {\r\n        font-size: 1.125rem;\r\n        height: 1.875rem;\r\n        width: 1.875rem;\r\n        border-radius: 100%;\r\n        color: $white;\r\n        background-color: $blue-grey;\r\n        @include breakpoint(small) {\r\n            height: 2.1875rem;\r\n            width: 2.1875rem;\r\n        }\r\n        @include breakpoint(medium) {\r\n            height: 2.5rem;\r\n            width: 2.5rem;\r\n        }\r\n    }\r\n}\r\n\r\n.writing-area {\r\n    min-height: 90%;\r\n    min-width: 85%;\r\n    margin-top: 1.375rem;\r\n\r\n    &__title {\r\n        @include input-field;\r\n        height: 10%;\r\n        margin-bottom: 0.9375rem;\r\n        font-weight: 600;\r\n    }\r\n\r\n    &__text {\r\n        @include input-field;\r\n        height: 100%;\r\n        font-weight: 500;\r\n        margin-bottom: 0.9375rem;\r\n    }\r\n\r\n    &__btn {\r\n        height: 3.125rem;\r\n        width: 5rem;\r\n        border-radius: 1.125rem;\r\n        font-size: 0.875rem;\r\n        outline: none;\r\n        @include breakpoint(medium) {\r\n            height: 3.4375rem;\r\n            width: 5.3125rem;\r\n            border-radius: 1.25rem;\r\n        } \r\n    }\r\n}\r\n",".create-note {\r\n    &__label {\r\n        text-align: center;\r\n        font-size: 1rem;\r\n        color: $white;\r\n        font-weight: 500;\r\n        @include breakpoint(xx-large) {\r\n            font-size: 1.125rem;\r\n        }\r\n    }\r\n\r\n    &__icon {\r\n        width: 5rem;\r\n        height: 5rem;\r\n        border: 0.156rem dashed $white;\r\n        border-radius: 6.25rem;\r\n        cursor: pointer;\r\n        @include breakpoint(medium) {\r\n            width: 5.3125rem;\r\n            height: 5.3125rem;\r\n        }\r\n       \r\n        &:hover{\r\n            border: 2.5px dashed $transparent-white;\r\n        }\r\n    }\r\n\r\n    &__cross {\r\n        font-size: 1.75rem;\r\n        font-weight: 500;\r\n        color: $white;\r\n    }\r\n}\r\n\r\n.closing-cross {\r\n    font-size: 1.375rem;\r\n    top: 0.3125rem;\r\n    right: 0.75rem;\r\n    padding: 0.3125rem;\r\n    font-family: monospace;\r\n    position: absolute;\r\n    cursor: pointer;\r\n    \r\n    &--dark-grey {\r\n        color: $dark-grey;\r\n        font-weight: 500;\r\n        &:hover {\r\n            color: $transparent-grey;\r\n        }\r\n    }\r\n\r\n    &--white {\r\n        color: $white;\r\n        font-weight: 600;\r\n        &:hover {\r\n            color: $transparent-white;\r\n        }\r\n    }\r\n}\r\n    \r\n\r\n\r\n\r\n\r\n",".note-widget {\r\n    width: 100%;\r\n    height: 12.5rem;\r\n    padding: 1.875rem;\r\n    background-color: $note-widget;\r\n    margin: auto;\r\n    max-width: 21.875rem;\r\n    border-radius: 1.875rem;\r\n    position: relative;\r\n    cursor: pointer;\r\n    user-select: none;\r\n    text-align: center;\r\n    @include breakpoint(small) {\r\n        max-width: 23.125rem;\r\n        height: 13.75rem;\r\n    }\r\n    &:hover {\r\n        background-color: $note-widget-hover;\r\n    }\r\n\r\n    &__title {\r\n        font-size: 1rem;\r\n        font-weight: 600;\r\n        color: $note-widget-title;\r\n        @include breakpoint(medium) {\r\n            font-size: 1.125rem;\r\n        }\r\n    }\r\n\r\n    &__text {\r\n        font-size: 0.875rem;\r\n        color: $note-widget-text;\r\n        font-weight: 500;\r\n        @include breakpoint(medium) {\r\n            font-size: 1rem;\r\n        }\r\n    }\r\n\r\n    &__date {\r\n        font-size: 0.875rem;\r\n        color: $white;\r\n        font-weight: 500;\r\n        @include breakpoint(medium) {\r\n            font-size: 1rem;\r\n        }\r\n    }\r\n}\r\n",".window {\r\n    height: 80vh;\r\n    width: 95%;\r\n    background-color: $white;\r\n    border-radius: 0.9375rem;\r\n    animation: fade-slide-in 0.6s ease-out forwards;\r\n    @include breakpoint(small) {\r\n        height: 85vh;\r\n    }\r\n\r\n    &--writing {\r\n        max-width: 31.25rem;\r\n    }\r\n\r\n    &--note-viewing {\r\n        padding: 2.8125rem;\r\n        @include breakpoint(large) {\r\n            width:90%;\r\n        }\r\n    }\r\n}\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/sass/base.scss","webpack://./src/sass/main.scss","webpack://./src/sass/mixins.scss","webpack://./src/sass/components/_alert-box.scss","webpack://./src/sass/components/_closing-cross.scss","webpack://./src/sass/components/_create-note-btn.scss","webpack://./src/sass/components/_view-note-btn.scss","webpack://./src/sass/components/_forms.scss","webpack://./src/sass/components/_note-widget.scss","webpack://./src/sass/layout/_overlay.scss","webpack://./src/sass/layout/_tools.scss","webpack://./src/sass/layout/_widget-list.scss","webpack://./src/sass/layout/_windows.scss"],"names":[],"mappings":"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","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');\r\n@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@600;700&display=swap');\r\n@import './mixins';\r\n\r\n//Colors\r\n$blue: rgb(34, 68, 121);\r\n$blue-grey-transparent: rgba(3, 71, 73, 0.616);\r\n$white: white;\r\n$transparent-white: rgba(255, 255, 255, 0.747);\r\n$box-shadow-grey: rgb(88, 85, 85);\r\n$box-shadow-light-grey: rgba(146, 144, 144, 0.603);\r\n$dark-grey: rgb(95, 93, 93);\r\n$transparent-grey: rgba(95, 93, 93, 0.514);\r\n$overlay-window: rgba(71, 70, 70, 0.253);\r\n$alert-box-green-mess: rgb(10, 167, 10);\r\n$note-widget-title: rgb(58, 57, 57);\r\n$note-widget-text: rgb(87, 85, 85);\r\n$note-widget: rgb(255, 255, 255);\r\n$note-widget-hover:  rgba(160, 213, 229, 0.473);\r\n$window: rgb(240, 238, 238);\r\n\r\n//Reset\r\n* {\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n    font-family: 'Manrope', sans-serif;\r\n}\r\n\r\nhtml {\r\n    font-size: 100%;\r\n}\r\n\r\nbody {\r\n    @include flex-column;\r\n    justify-content: space-evenly;\r\n    min-height: 100vh;\r\n    background-image: url('/src/img/bckGround.jpg') ;\r\n    background-position: 15% 10%;\r\n\r\n    footer{\r\n        width: 100%;\r\n        text-align: center;\r\n        padding-top: 15px;\r\n        font-size: 0.875rem;\r\n        background-color: transparent;\r\n        color: $white;\r\n    }\r\n}\r\n\r\n//Typography\r\nh1 {\r\n    font-size: 2rem;\r\n    font-weight: 700;\r\n    color: $white;\r\n    font-family: 'Quicksand', sans-serif;\r\n    text-align: center;\r\n    @include breakpoint(medium) {\r\n        font-size: 2.25rem;\r\n    }\r\n    @include breakpoint(large) {\r\n        font-size: 2.5rem;\r\n    }\r\n    @include breakpoint(xx-large) {\r\n        font-size: 3rem;\r\n    }\r\n}\r\n\r\nbutton {\r\n    font-size: 1rem;\r\n    font-weight: 600;\r\n    color: $white;\r\n    background-color: $blue;\r\n    border: none;\r\n}\r\n\r\nbutton:hover {\r\n    background-color: $blue-grey-transparent;\r\n    cursor: pointer;\r\n}\r\n\r\n//animations\r\n@keyframes fade-slide-in {\r\n    from {\r\n      transform: translateY(-5rem);\r\n    }\r\n    to {\r\n      transform: translateY(0);\r\n    }\r\n}\r\n  ","@import url(\"https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap\");\n@import url(\"https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@600;700&display=swap\");\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-family: \"Manrope\", sans-serif;\n}\n\nhtml {\n  font-size: 100%;\n}\n\nbody {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-evenly;\n  min-height: 100vh;\n  background-image: url(\"/src/img/bckGround.jpg\");\n  background-position: 15% 10%;\n}\nbody footer {\n  width: 100%;\n  text-align: center;\n  padding-top: 15px;\n  font-size: 0.875rem;\n  background-color: transparent;\n  color: white;\n}\n\nh1 {\n  font-size: 2rem;\n  font-weight: 700;\n  color: white;\n  font-family: \"Quicksand\", sans-serif;\n  text-align: center;\n}\n@media (min-width: 48rem) {\n  h1 {\n    font-size: 2.25rem;\n  }\n}\n@media (min-width: 62rem) {\n  h1 {\n    font-size: 2.5rem;\n  }\n}\n@media (min-width: 87.5rem) {\n  h1 {\n    font-size: 3rem;\n  }\n}\n\nbutton {\n  font-size: 1rem;\n  font-weight: 600;\n  color: white;\n  background-color: rgb(34, 68, 121);\n  border: none;\n}\n\nbutton:hover {\n  background-color: rgba(3, 71, 73, 0.616);\n  cursor: pointer;\n}\n\n@keyframes fade-slide-in {\n  from {\n    transform: translateY(-5rem);\n  }\n  to {\n    transform: translateY(0);\n  }\n}\n.alert-box {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  text-align: center;\n  gap: 20px;\n  width: 75%;\n  height: 25%;\n  padding: 1.5625rem;\n  line-height: 1.25rem;\n  border-radius: 1.25rem;\n  background-color: white;\n  z-index: 100000;\n  box-shadow: 0.09375rem 0.09375rem 0.1875rem rgba(146, 144, 144, 0.603);\n  animation: fade-slide-in 0.3s ease-out forwards;\n}\n@media (min-width: 36rem) {\n  .alert-box {\n    width: 60%;\n    height: 30%;\n  }\n}\n@media (min-width: 48rem) {\n  .alert-box {\n    width: 40%;\n  }\n}\n@media (min-width: 62rem) {\n  .alert-box {\n    width: 30%;\n  }\n}\n.alert-box__message {\n  font-size: 0.875rem;\n  font-weight: 600;\n  line-height: 1.5625rem;\n}\n.alert-box__message--green-mess {\n  color: rgb(10, 167, 10);\n}\n.alert-box__message--blue {\n  color: rgb(34, 68, 121);\n}\n.alert-box__flex-row {\n  display: flex;\n  gap: 10px;\n}\n.alert-box__button {\n  width: 3.75rem;\n  height: 2.8125rem;\n  border-radius: 3.125rem;\n  background-color: rgb(34, 68, 121);\n  color: white;\n  font-size: 0.875rem;\n  font-weight: 600;\n}\n\n.closing-cross {\n  font-size: 1.375rem;\n  top: 0.3125rem;\n  right: 0.75rem;\n  padding: 0.3125rem;\n  font-family: monospace;\n  position: absolute;\n  cursor: pointer;\n}\n.closing-cross--dark-grey {\n  color: rgb(95, 93, 93);\n  font-weight: 500;\n}\n.closing-cross--dark-grey:hover {\n  color: rgba(95, 93, 93, 0.514);\n}\n\n.create-note {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  gap: 20px;\n}\n.create-note__label {\n  text-align: center;\n  font-size: 1rem;\n  color: white;\n  font-weight: 500;\n}\n@media (min-width: 87.5rem) {\n  .create-note__label {\n    font-size: 1.125rem;\n  }\n}\n.create-note__icon {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  width: 5rem;\n  height: 5rem;\n  border: 0.156rem dashed white;\n  border-radius: 6.25rem;\n  cursor: pointer;\n}\n@media (min-width: 48rem) {\n  .create-note__icon {\n    width: 5.3125rem;\n    height: 5.3125rem;\n  }\n}\n.create-note__icon:hover {\n  border: 2.5px dashed rgba(255, 255, 255, 0.747);\n}\n.create-note__cross {\n  font-size: 1.75rem;\n  font-weight: 500;\n  color: white;\n}\n\n.view-note-btn {\n  width: 6.25rem;\n  height: 3.125rem;\n  margin: auto;\n  border-radius: 1.625rem;\n  background-color: white;\n  color: rgb(34, 68, 121);\n  font-size: 0.875rem;\n}\n@media (min-width: 48rem) {\n  .view-note-btn {\n    width: 6.5625rem;\n    height: 3.4375rem;\n    border-radius: 1.75rem;\n  }\n}\n.view-note-btn:hover {\n  background-color: rgba(255, 255, 255, 0.747);\n}\n\n.search-bubble {\n  display: flex;\n  width: min(90%, 400px);\n  justify-content: space-around;\n  align-items: center;\n  height: 3.125rem;\n  margin: auto;\n  background-color: white;\n  border-radius: 1.875rem;\n}\n.search-bubble__field {\n  border-radius: 1.875rem;\n  width: 80%;\n  height: 100%;\n  background-color: white;\n  outline: none;\n  padding: 0.875rem;\n  border: none;\n}\n.search-bubble__btn {\n  font-size: 1.125rem;\n  height: 1.875rem;\n  width: 1.875rem;\n  border-radius: 100%;\n  color: white;\n  background-color: rgb(34, 68, 121);\n}\n@media (min-width: 36rem) {\n  .search-bubble__btn {\n    height: 2.1875rem;\n    width: 2.1875rem;\n  }\n}\n@media (min-width: 48rem) {\n  .search-bubble__btn {\n    height: 2.5rem;\n    width: 2.5rem;\n  }\n}\n\n.writing-area {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  min-height: 90%;\n  min-width: 85%;\n  margin-top: 1.375rem;\n}\n.writing-area__title {\n  width: 100%;\n  border-radius: 0.625rem;\n  border: 0.0625rem solid rgba(146, 144, 144, 0.603);\n  outline: none;\n  padding: 0.625rem;\n  height: 10%;\n  margin-bottom: 0.9375rem;\n  font-weight: 600;\n}\n.writing-area__title:focus {\n  box-shadow: 0.09375rem 0.09375rem 0.1875rem rgba(146, 144, 144, 0.603);\n}\n.writing-area__text {\n  width: 100%;\n  border-radius: 0.625rem;\n  border: 0.0625rem solid rgba(146, 144, 144, 0.603);\n  outline: none;\n  padding: 0.625rem;\n  height: 100%;\n  font-weight: 500;\n  margin-bottom: 0.9375rem;\n}\n.writing-area__text:focus {\n  box-shadow: 0.09375rem 0.09375rem 0.1875rem rgba(146, 144, 144, 0.603);\n}\n.writing-area__btn {\n  height: 3.125rem;\n  width: 5rem;\n  border-radius: 1.125rem;\n  font-size: 0.875rem;\n  outline: none;\n}\n@media (min-width: 48rem) {\n  .writing-area__btn {\n    height: 3.4375rem;\n    width: 5.3125rem;\n    border-radius: 1.25rem;\n  }\n}\n\n.note-widget {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  width: 100%;\n  min-height: 12.5rem;\n  padding: 1.875rem;\n  margin: auto;\n  max-width: 21.875rem;\n  border-radius: 15px;\n  cursor: pointer;\n  user-select: none;\n  text-align: center;\n  background-color: rgb(255, 255, 255);\n  box-shadow: 1px 3px 7px 1px lightgray;\n}\n@media (min-width: 36rem) {\n  .note-widget {\n    max-width: 23.125rem;\n    min-height: 13.75rem;\n  }\n}\n.note-widget:hover {\n  background-color: rgba(160, 213, 229, 0.473);\n}\n.note-widget__title {\n  font-size: 1rem;\n  font-weight: 600;\n  color: rgb(58, 57, 57);\n}\n@media (min-width: 48rem) {\n  .note-widget__title {\n    font-size: 1.125rem;\n  }\n}\n.note-widget__text {\n  font-size: 0.875rem;\n  color: rgb(87, 85, 85);\n  font-weight: 500;\n}\n@media (min-width: 48rem) {\n  .note-widget__text {\n    font-size: 1rem;\n  }\n}\n.note-widget__date {\n  font-size: 0.875rem;\n  color: black;\n  font-weight: 500;\n}\n@media (min-width: 48rem) {\n  .note-widget__date {\n    font-size: 1rem;\n  }\n}\n.note-widget__icon {\n  color: rgb(78, 77, 77);\n}\n.note-widget__icon:hover {\n  color: rgba(126, 123, 123, 0.856);\n}\n\n.overlay {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  position: fixed;\n  inset: 0 0 0 0;\n  padding: 1.25rem;\n  background-color: rgba(71, 70, 70, 0.253);\n}\n.overlay--window {\n  z-index: 2000;\n}\n.overlay--alert-box {\n  z-index: 4000;\n}\n\n.tools {\n  display: flex;\n  flex-direction: column;\n  gap: 80px;\n  width: 100%;\n  height: 100%;\n  padding: 40px 16px 16px 16px;\n}\n\n.widgets-list {\n  width: 100%;\n  height: 100%;\n  overflow: scroll;\n  overflow-x: hidden;\n  display: grid;\n  align-items: center;\n  grid-template-columns: 1fr;\n  grid-template-rows: auto;\n  gap: 1.25rem;\n  padding: 0.625rem;\n}\n@media (min-width: 48rem) {\n  .widgets-list {\n    grid-template-columns: 1fr 1fr;\n  }\n}\n@media (min-width: 62rem) {\n  .widgets-list {\n    grid-template-columns: repeat(3, 1fr);\n  }\n}\n@media (min-width: 75rem) {\n  .widgets-list {\n    grid-template-columns: repeat(4, 1fr);\n  }\n}\n\n.window {\n  width: 90%;\n  min-height: 80vh;\n  background-color: rgb(240, 238, 238);\n  border-radius: 10px;\n  animation: fade-slide-in 0.6s ease-out forwards;\n}\n@media (min-width: 36rem) {\n  .window {\n    height: 85vh;\n  }\n}\n.window__writing {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  height: 80vh;\n  max-width: 31.25rem;\n}\n.window__note-viewing {\n  display: flex;\n  flex-direction: column;\n  min-height: 80vh;\n  padding: 2.8125rem;\n}\n@media (min-width: 62rem) {\n  .window__note-viewing {\n    min-height: 90vh;\n  }\n}","@mixin input-field {\r\n    width: 100%;\r\n    border-radius: 0.625rem;\r\n    border: 0.0625rem solid $box-shadow-light-grey;\r\n    outline: none;\r\n    padding: 0.625rem;\r\n    &:focus {\r\n        box-shadow: 0.09375rem 0.09375rem 0.1875rem $box-shadow-light-grey;\r\n    }\r\n}\r\n\r\n$breakpoints: (\r\n    'small': '36rem', // ≥576px\r\n    'medium': '48rem', // ≥768px\r\n    'large': '62rem', // ≥992p\r\n    'x-large': '75rem', // ≥1200px\r\n    'xx-large': '87.5rem', // ≥1400px\r\n);\r\n\r\n@mixin breakpoint($size) {\r\n\t@media (min-width: map-get($breakpoints, $size)) {\r\n\t\t@content;\r\n\t}\r\n}\r\n\r\n@mixin flex-column {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n@mixin flex-column-center {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n@mixin flex-row{ display: flex; }",".alert-box {\r\n    @include flex-column-center;\r\n    text-align: center;\r\n    gap: 20px;\r\n    width: 75%;\r\n    height: 25%;\r\n    padding: 1.5625rem;\r\n    line-height: 1.25rem;\r\n    border-radius: 1.25rem;\r\n    background-color: $white;\r\n    z-index: 100000;\r\n    box-shadow: 0.09375rem 0.09375rem 0.1875rem $box-shadow-light-grey;\r\n    animation: fade-slide-in 0.3s ease-out forwards;\r\n    @include breakpoint(small) {\r\n        width: 60%;\r\n        height: 30%;\r\n    }\r\n    @include breakpoint(medium) { width: 40%; }\r\n    @include breakpoint(large) { width: 30%; }\r\n\r\n    &__message {\r\n        font-size: 0.875rem;\r\n        font-weight: 600;\r\n        line-height: 1.5625rem;\r\n    }\r\n\r\n    &__message--green-mess {\r\n        color: $alert-box-green-mess;\r\n    }\r\n\r\n    &__message--blue {\r\n        color: $blue;\r\n    }\r\n    &__flex-row { \r\n        @include flex-row;\r\n        gap: 10px;\r\n    }\r\n    &__button {\r\n        width: 3.75rem;\r\n        height: 2.8125rem;\r\n        border-radius: 3.125rem;\r\n        background-color: $blue;\r\n        color: $white;\r\n        font-size: 0.875rem;\r\n        font-weight: 600;\r\n    }\r\n}",".closing-cross {\r\n    font-size: 1.375rem;\r\n    top: 0.3125rem;\r\n    right: 0.75rem;\r\n    padding: 0.3125rem;\r\n    font-family: monospace;\r\n    position: absolute;\r\n    cursor: pointer;\r\n    \r\n    &--dark-grey {\r\n        color: $dark-grey;\r\n        font-weight: 500;\r\n        &:hover { color: $transparent-grey; }\r\n    }\r\n}",".create-note {\r\n    @include flex-column-center;\r\n    gap: 20px;\r\n    &__label {\r\n        text-align: center;\r\n        font-size: 1rem;\r\n        color: $white;\r\n        font-weight: 500;\r\n        @include breakpoint(xx-large) {\r\n            font-size: 1.125rem;\r\n        }\r\n    }\r\n\r\n    &__icon {\r\n        @include flex-column-center;\r\n        width: 5rem;\r\n        height: 5rem;\r\n        border: 0.156rem dashed $white;\r\n        border-radius: 6.25rem;\r\n        cursor: pointer;\r\n        @include breakpoint(medium) {\r\n            width: 5.3125rem;\r\n            height: 5.3125rem;\r\n        }\r\n       \r\n        &:hover{\r\n            border: 2.5px dashed $transparent-white;\r\n        }\r\n    }\r\n\r\n    &__cross {\r\n        font-size: 1.75rem;\r\n        font-weight: 500;\r\n        color: $white;\r\n    }\r\n}",".view-note-btn {\r\n    width: 6.25rem;\r\n    height: 3.125rem;\r\n    margin: auto;\r\n    border-radius: 1.625rem;\r\n    background-color: $white;\r\n    color: $blue;\r\n    font-size: 0.875rem;\r\n    @include breakpoint(medium) {\r\n        width: 6.5625rem;\r\n        height: 3.4375rem;\r\n        border-radius: 1.75rem;\r\n    }\r\n    &:hover { background-color: $transparent-white; }\r\n}\r\n",".search-bubble {\r\n    display: flex;\r\n    width: min(90%, 400px);\r\n    justify-content: space-around;\r\n    align-items: center;\r\n    height: 3.125rem;\r\n    margin: auto;\r\n    background-color: $white;\r\n    border-radius: 1.875rem;\r\n    \r\n\r\n    &__field {\r\n        border-radius: 1.875rem;\r\n        width: 80%;\r\n        height: 100%;\r\n        background-color: $white;\r\n        outline: none;\r\n        padding: 0.875rem;\r\n        border: none;\r\n    }\r\n\r\n    &__btn {\r\n        font-size: 1.125rem;\r\n        height: 1.875rem;\r\n        width: 1.875rem;\r\n        border-radius: 100%;\r\n        color: $white;\r\n        background-color: $blue;\r\n        @include breakpoint(small) {\r\n            height: 2.1875rem;\r\n            width: 2.1875rem;\r\n        }\r\n        @include breakpoint(medium) {\r\n            height: 2.5rem;\r\n            width: 2.5rem;\r\n        }\r\n    }\r\n}\r\n\r\n.writing-area {\r\n    @include flex-column-center;\r\n    min-height: 90%;\r\n    min-width: 85%;\r\n    margin-top: 1.375rem;\r\n\r\n    &__title {\r\n        @include input-field;\r\n        height: 10%;\r\n        margin-bottom: 0.9375rem;\r\n        font-weight: 600;\r\n    }\r\n\r\n    &__text {\r\n        @include input-field;\r\n        height: 100%;\r\n        font-weight: 500;\r\n        margin-bottom: 0.9375rem;\r\n    }\r\n\r\n    &__btn {\r\n        height: 3.125rem;\r\n        width: 5rem;\r\n        border-radius: 1.125rem;\r\n        font-size: 0.875rem;\r\n        outline: none;\r\n        @include breakpoint(medium) {\r\n            height: 3.4375rem;\r\n            width: 5.3125rem;\r\n            border-radius: 1.25rem;\r\n        } \r\n    }\r\n}\r\n",".note-widget {\r\n    @include flex-column;\r\n    gap: 12px;\r\n    width: 100%;\r\n    min-height: 12.5rem;\r\n    padding: 1.875rem;\r\n    margin: auto;\r\n    max-width: 21.875rem;\r\n    border-radius: 15px;\r\n    cursor: pointer;\r\n    user-select: none;\r\n    text-align: center;\r\n    background-color: $note-widget;\r\n    box-shadow: 1px 3px 7px 1px lightgray;\r\n    @include breakpoint(small) {\r\n        max-width: 23.125rem;\r\n        min-height: 13.75rem;\r\n    }\r\n    &:hover { background-color: $note-widget-hover; }\r\n\r\n    &__title {\r\n        font-size: 1rem;\r\n        font-weight: 600;\r\n        color: $note-widget-title;\r\n        @include breakpoint(medium) { font-size: 1.125rem; }\r\n    }\r\n\r\n    &__text {\r\n        font-size: 0.875rem;\r\n        color: $note-widget-text;\r\n        font-weight: 500;\r\n        @include breakpoint(medium) { font-size: 1rem; }\r\n    }\r\n\r\n    &__date {\r\n        font-size: 0.875rem;\r\n        color: black;\r\n        font-weight: 500;\r\n        @include breakpoint(medium) { font-size: 1rem; }\r\n    }\r\n\r\n    &__icon { \r\n        color: rgb(78, 77, 77); \r\n        &:hover { color: rgba(126, 123, 123, 0.856);  }\r\n    }\r\n}\r\n",".overlay {\r\n    @include flex-column-center;\r\n    position: fixed;\r\n    inset: 0 0 0 0;\r\n    padding: 1.25rem;\r\n    background-color: $overlay-window;\r\n    \r\n    &--window { z-index: 2000; }\r\n    &--alert-box { z-index: 4000; }\r\n}\r\n",".tools {\r\n    @include flex-column;\r\n    gap: 80px;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding: 40px 16px 16px 16px\r\n}",".widgets-list {\r\n    width: 100%;\r\n    height: 100%;\r\n    overflow: scroll;\r\n    overflow-x: hidden;\r\n    display: grid;\r\n    align-items: center;\r\n    grid-template-columns: 1fr;\r\n    grid-template-rows: auto;\r\n    gap: 1.25rem;\r\n    padding: 0.625rem;\r\n    @include breakpoint(medium) {\r\n     grid-template-columns: 1fr 1fr;\r\n    }\r\n    @include breakpoint(large) {\r\n     grid-template-columns: repeat(3, 1fr);\r\n    }\r\n    @include breakpoint(x-large) {\r\n     grid-template-columns: repeat(4, 1fr);\r\n    }\r\n}",".window {\r\n    width: 90%;\r\n    min-height: 80vh;\r\n    background-color: $window;\r\n    border-radius: 10px;\r\n    animation: fade-slide-in 0.6s ease-out forwards;\r\n    @include breakpoint(small) { height: 85vh; }\r\n\r\n    &__writing {\r\n        @include flex-column-center;\r\n        height: 80vh;\r\n        max-width: 31.25rem;\r\n    }\r\n\r\n    &__note-viewing {\r\n        @include flex-column;\r\n        min-height: 80vh;\r\n        padding: 2.8125rem;\r\n        @include breakpoint(large) { min-height: 90vh; }\r\n    }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -561,6 +572,41 @@ module.exports = function (cssWithMappingToString) {
     }
   };
   return list;
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+  if (!url) {
+    return url;
+  }
+  url = String(url.__esModule ? url.default : url);
+
+  // If url is already wrapped in quotes, remove them
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+  if (options.hash) {
+    url += options.hash;
+  }
+
+  // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+  return url;
 };
 
 /***/ }),
@@ -940,7 +986,7 @@ class AlertBox {
                 _writing_window__WEBPACK_IMPORTED_MODULE_1__.WritingWindow.removeWindow();
             }
             document.getElementById('alert-box-overlay').remove();
-        } )
+        })
     }
 
     static async showWidgetAlertBox(widget, noteId) {
@@ -1025,17 +1071,17 @@ class NoteViewingWindow {
     static displayWindow(notes) {
         if(notes.length === 0) {
             const message = 'No note(s) in storage yet. Click on "Create a note" to start adding notes.';
-            _alert_box__WEBPACK_IMPORTED_MODULE_1__.AlertBox.showGenericAlertBox(message, 'alert-box__message--blue-grey', 'overlay-alert-box');
+            _alert_box__WEBPACK_IMPORTED_MODULE_1__.AlertBox.showGenericAlertBox(message, 'alert-box__message--blue', 'overlay-alert-box');
             return;
         } else if(!notes) {
             const message = 'No corresponding note(s) to your search';
-            _alert_box__WEBPACK_IMPORTED_MODULE_1__.AlertBox.showGenericAlertBox(message, 'alert-box__message--blue-grey', 'overlay-alert-box');
+            _alert_box__WEBPACK_IMPORTED_MODULE_1__.AlertBox.showGenericAlertBox(message, 'alert-box__message--blue', 'overlay-alert-box');
             return;
         }
-        const rootElement = document.getElementById('page-container');
+        const rootElement = document.getElementById('page');
         rootElement.insertAdjacentHTML('beforeend', 
-        `<div id="window-overlay" class="window-overlay flex-col">
-            <div id="note-viewing-window" class="window window--note-viewing flex-col">
+        `<div id="window-overlay" class="overlay overlay--window">
+            <div id="note-viewing-window" class="window window__note-viewing">
                 <span id="close-windw-cross" class="closing-cross closing-cross--dark-grey">x</span>
                 <ul id="widgets-list" class="widgets-list"></ul>
             </div>
@@ -1073,14 +1119,16 @@ __webpack_require__.r(__webpack_exports__);
 
 class NoteWidget {
     static addNoteWidgets(notes) {
-        const NOTE_TITLE_MAX_LENGTH = 35;
-        const NOTE_TEXT_MAX_LENGTH  = 30;
+        const NOTE_TITLE_MAX_LENGTH = 25;
+        const NOTE_TEXT_MAX_LENGTH  = 20;
         notes.forEach((note) => {
             const widget = document.createElement('li');
             widget.id = "note-widget";
-            widget.classList.add('note-widget', 'flex-col', 'flex-col__gap15');
+            widget.classList.add('note-widget');
             widget.innerHTML = `
-                <span id="note-widget-cross" class="closing-cross closing-cross--white">x</span>
+                <span id="delete-widget" class="note-widget__icon">
+                    <i class="fa-regular fa-trash-can"></i>
+                </span>
                 <h2 id="note-widget-title" class="note-widget__title">
                     ${note.title.substring(0, NOTE_TITLE_MAX_LENGTH )}
                     ${note.title.length > NOTE_TITLE_MAX_LENGTH ? "..." : ""}
@@ -1095,7 +1143,7 @@ class NoteWidget {
                 _note_viewing_window__WEBPACK_IMPORTED_MODULE_0__.NoteViewingWindow.removeWindow();
                 _writing_window__WEBPACK_IMPORTED_MODULE_1__.WritingWindow.displayWindow(note);
             })
-            widget.querySelector('.closing-cross').addEventListener('click', (event)=> {
+            widget.querySelector('#delete-widget').addEventListener('click', (event)=> {
                 event.stopPropagation();
                 _alert_box__WEBPACK_IMPORTED_MODULE_3__.AlertBox.showWidgetAlertBox(widget, note.id);
             })
@@ -1146,24 +1194,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   SearchForm: () => (/* binding */ SearchForm)
 /* harmony export */ });
-/* harmony import */ var _alert_box__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./alert-box */ "./src/js/alert-box.js");
-/* harmony import */ var _local_storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./local-storage */ "./src/js/local-storage.js");
-/* harmony import */ var _note_viewing_window__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./note-viewing-window */ "./src/js/note-viewing-window.js");
-
+/* harmony import */ var _local_storage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./local-storage */ "./src/js/local-storage.js");
+/* harmony import */ var _note_viewing_window__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./note-viewing-window */ "./src/js/note-viewing-window.js");
 
 
 
 class SearchForm {
-    static searchHandler(event) {
-        event.preventDefault();
-        if(!document.getElementById('search-field').value.trim()) {
-            const message = 'Enter a search keyword in input field';
-            _alert_box__WEBPACK_IMPORTED_MODULE_0__.AlertBox.showGenericAlertBox(message, 'alert-box__message--blue-grey', 'overlay-alert-box');
-            return;
+    static searchHandler() {
+        const inputVal = document.getElementById('search-field').value.trim();
+        if(inputVal) {
+            const allNotes = _local_storage__WEBPACK_IMPORTED_MODULE_0__.LocalStorage.getNotes();
+            _note_viewing_window__WEBPACK_IMPORTED_MODULE_1__.NoteViewingWindow.displayWindow(this.loadSearch(allNotes));
         }
-        const allNotes = _local_storage__WEBPACK_IMPORTED_MODULE_1__.LocalStorage.getNotes();
-        _note_viewing_window__WEBPACK_IMPORTED_MODULE_2__.NoteViewingWindow.displayWindow(this.loadSearch(allNotes));
-        
     }
 
     static loadSearch(allNotes) {
@@ -1203,10 +1245,10 @@ class WritingWindow {
     static displayWindow(noteToUpdate) {
         const rootElement = document.getElementById('page-container');
         rootElement.insertAdjacentHTML('beforeend', 
-        `<div id="window-overlay" class="window-overlay flex-col">
-            <div id="writing-window" class="window window--writing flex-col">
+        `<div id="window-overlay" class="overlay overlay--window">
+            <div id="writing-window" class="window window__writing">
                 <span id="close-windw-cross" class="closing-cross closing-cross--dark-grey">x</span>
-                <form id="writing-area" class="writing-area flex-col">
+                <form id="writing-area" class="writing-area">
                     <input id="writing-area-title" class="writing-area__title" type="text" autocomplete="off" maxlength="40" placeholder="Enter title ...">
                     <textarea id="writing-area-text" class="writing-area__text" name="writing-area-text" placeholder="Enter text..." ></textarea>
                     <button id="writing-area-btn" class="writing-area__btn" type="button">Save</button>
@@ -1223,9 +1265,14 @@ class WritingWindow {
             this.removeWindow();
             if(WritingWindow.noteToUpdate){ WritingWindow.noteToUpdate = null; };
         });
+        document.getElementById('writing-area').addEventListener('submit', (event)=> {
+            event.preventDefault();
+        });
         document.getElementById('writing-area-btn').addEventListener('click', (event)=> {
             event.preventDefault();
+            document.getElementById('writing-area-btn').disabled = true;
             this.checkUserInput();
+            document.getElementById('writing-area-btn').disabled = false;
         });
     }
 
@@ -1250,14 +1297,14 @@ class WritingWindow {
         if(titleValue && textValue) {
             if(this.noteToUpdate) {
                 if(this.noteToUpdate.title === titleValue && this.noteToUpdate.text === textValue) {
-                    _alert_box__WEBPACK_IMPORTED_MODULE_2__.AlertBox.showGenericAlertBox('Note must be updated before saving!', 'alert-box__message--blue-grey', 'alert-box-overlay');
+                    _alert_box__WEBPACK_IMPORTED_MODULE_2__.AlertBox.showGenericAlertBox('Note must be edited to be saved.', 'alert-box__message--blue', 'alert-box-overlay');
                     return;
                 }
             }
             const note = this.storeUserInput(titleValue, textValue);
             _local_storage__WEBPACK_IMPORTED_MODULE_0__.LocalStorage.saveNote(note);
         } else {
-            _alert_box__WEBPACK_IMPORTED_MODULE_2__.AlertBox.showGenericAlertBox('Fill empty field(s) before saving!',  'alert-box__message--blue-grey', 'alert-box-overlay');
+            _alert_box__WEBPACK_IMPORTED_MODULE_2__.AlertBox.showGenericAlertBox('Fill empty field(s) before saving.',  'alert-box__message--blue', 'alert-box-overlay');
             return;
         }
     }
@@ -1267,6 +1314,16 @@ class WritingWindow {
     }
 }
 
+
+/***/ }),
+
+/***/ "./src/img/bckGround.jpg":
+/*!*******************************!*\
+  !*** ./src/img/bckGround.jpg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "2e806a63011665556a5d.jpg";
 
 /***/ })
 
@@ -1296,6 +1353,9 @@ class WritingWindow {
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -1321,6 +1381,18 @@ class WritingWindow {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -1335,6 +1407,55 @@ class WritingWindow {
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && !scriptUrl) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"main": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// no jsonp function
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
@@ -1363,12 +1484,18 @@ __webpack_require__.r(__webpack_exports__);
 
 class App {
     init() {
-        document.getElementById('search').addEventListener('submit', _js_search_form__WEBPACK_IMPORTED_MODULE_4__.SearchForm.searchHandler.bind(_js_search_form__WEBPACK_IMPORTED_MODULE_4__.SearchForm));
+        //Add event listener on interactive elements
+        document.getElementById('search').addEventListener('submit',(event)=> {
+            event.preventDefault();
+            _js_search_form__WEBPACK_IMPORTED_MODULE_4__.SearchForm.searchHandler()
+        });
         document.getElementById('create-note-icon').addEventListener('click', ()=>{
             _js_writing_window__WEBPACK_IMPORTED_MODULE_1__.WritingWindow.displayWindow();
         })
         document.getElementById('view-note-btn').addEventListener('click', ()=> {
+            document.getElementById('view-note-btn').disabled = true;
             _js_note_viewing_window__WEBPACK_IMPORTED_MODULE_2__.NoteViewingWindow.displayWindow(_js_local_storage__WEBPACK_IMPORTED_MODULE_3__.LocalStorage.getNotes());
+            document.getElementById('view-note-btn').disabled = false;
         })
     }
 }
@@ -1381,4 +1508,4 @@ app.init();
 
 /******/ })()
 ;
-//# sourceMappingURL=f07cf864f116548d5d90.js.map
+//# sourceMappingURL=58d854312deae19b15c1.js.map

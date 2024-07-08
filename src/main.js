@@ -6,12 +6,18 @@ import { SearchForm } from './js/search-form'
 
 class App {
     init() {
-        document.getElementById('search').addEventListener('submit', SearchForm.searchHandler.bind(SearchForm));
+        //Add event listener on interactive elements
+        document.getElementById('search').addEventListener('submit',(event)=> {
+            event.preventDefault();
+            SearchForm.searchHandler()
+        });
         document.getElementById('create-note-icon').addEventListener('click', ()=>{
             WritingWindow.displayWindow();
         })
         document.getElementById('view-note-btn').addEventListener('click', ()=> {
+            document.getElementById('view-note-btn').disabled = true;
             NoteViewingWindow.displayWindow(LocalStorage.getNotes());
+            document.getElementById('view-note-btn').disabled = false;
         })
     }
 }

@@ -1,17 +1,15 @@
 .view-note-btn {
     width: 6.25rem;
     height: 3.125rem;
+    margin: auto;
     border-radius: 1.625rem;
     background-color: $white;
-    color: $blue-grey;
+    color: $blue;
     font-size: 0.875rem;
     @include breakpoint(medium) {
         width: 6.5625rem;
         height: 3.4375rem;
         border-radius: 1.75rem;
     }
-    &:hover {
-        background-color: $transparent-white;
-    }
+    &:hover { background-color: $transparent-white; }
 }
-

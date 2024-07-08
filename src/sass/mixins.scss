@@ -23,10 +23,16 @@ $breakpoints: (
 	}
 }
 
-@mixin overlay {
-    min-height: 100%;
-    width: 100%;
-    padding: 1.25rem;
-    position: absolute;
-    top: 0;
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
 }
+
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-row{ display: flex; }

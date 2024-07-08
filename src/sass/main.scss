@@ -1,14 +1,7 @@
-@import 'mixins';
-@import 'base';
-@import 'layout'; 
-@import 'containers';
-@import './components/alert-box';
-@import './components/button';
-@import './components/forms';
-@import './components/icons';
-@import './components/note-widget';
-@import './components/windows';
-
+@import './base';
+@import './mixins';
+@import './components/index';
+@import './layout/index';
 
 
 

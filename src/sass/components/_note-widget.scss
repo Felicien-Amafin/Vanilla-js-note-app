@@ -1,47 +1,46 @@
 .note-widget {
+    @include flex-column;
+    gap: 12px;
     width: 100%;
-    height: 12.5rem;
+    min-height: 12.5rem;
     padding: 1.875rem;
-    background-color: $note-widget;
     margin: auto;
     max-width: 21.875rem;
-    border-radius: 1.875rem;
-    position: relative;
+    border-radius: 15px;
     cursor: pointer;
     user-select: none;
     text-align: center;
+    background-color: $note-widget;
+    box-shadow: 1px 3px 7px 1px lightgray;
     @include breakpoint(small) {
         max-width: 23.125rem;
-        height: 13.75rem;
+        min-height: 13.75rem;
     }
-    &:hover {
-        background-color: $note-widget-hover;
-    }
+    &:hover { background-color: $note-widget-hover; }
 
     &__title {
         font-size: 1rem;
         font-weight: 600;
         color: $note-widget-title;
-        @include breakpoint(medium) {
-            font-size: 1.125rem;
-        }
+        @include breakpoint(medium) { font-size: 1.125rem; }
     }
 
     &__text {
         font-size: 0.875rem;
         color: $note-widget-text;
         font-weight: 500;
-        @include breakpoint(medium) {
-            font-size: 1rem;
-        }
+        @include breakpoint(medium) { font-size: 1rem; }
     }
 
     &__date {
         font-size: 0.875rem;
-        color: $white;
+        color: black;
         font-weight: 500;
-        @include breakpoint(medium) {
-            font-size: 1rem;
-        }
+        @include breakpoint(medium) { font-size: 1rem; }
+    }
+
+    &__icon { 
+        color: rgb(78, 77, 77); 
+        &:hover { color: rgba(126, 123, 123, 0.856);  }
     }
 }

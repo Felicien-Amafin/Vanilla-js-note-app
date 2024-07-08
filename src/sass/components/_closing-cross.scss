@@ -1,0 +1,15 @@
+.closing-cross {
+    font-size: 1.375rem;
+    top: 0.3125rem;
+    right: 0.75rem;
+    padding: 0.3125rem;
+    font-family: monospace;
+    position: absolute;
+    cursor: pointer;
+    
+    &--dark-grey {
+        color: $dark-grey;
+        font-weight: 500;
+        &:hover { color: $transparent-grey; }
+    }
+}

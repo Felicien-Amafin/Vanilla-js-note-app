@@ -15,7 +15,7 @@ export class AlertBox {
                 WritingWindow.removeWindow();
             }
             document.getElementById('alert-box-overlay').remove();
-        } )
+        })
     }
 
     static async showWidgetAlertBox(widget, noteId) {

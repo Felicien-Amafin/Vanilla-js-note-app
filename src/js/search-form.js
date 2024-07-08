@@ -1,18 +1,13 @@
-import { AlertBox } from "./alert-box";
 import { LocalStorage } from "./local-storage";
 import { NoteViewingWindow } from "./note-viewing-window";
 
 export class SearchForm {
-    static searchHandler(event) {
-        event.preventDefault();
-        if(!document.getElementById('search-field').value.trim()) {
-            const message = 'Enter a search keyword in input field';
-            AlertBox.showGenericAlertBox(message, 'alert-box__message--blue-grey', 'overlay-alert-box');
-            return;
+    static searchHandler() {
+        const inputVal = document.getElementById('search-field').value.trim();
+        if(inputVal) {
+            const allNotes = LocalStorage.getNotes();
+            NoteViewingWindow.displayWindow(this.loadSearch(allNotes));
         }
-        const allNotes = LocalStorage.getNotes();
-        NoteViewingWindow.displayWindow(this.loadSearch(allNotes));
-        
     }
 
     static loadSearch(allNotes) {
