@@ -23,7 +23,7 @@ I've used local storage for data storage.
 ## Installation & Testing
 <br/>
 
-`To install the project: first run "npm install".To test the project: run "npm run serv"` or click here: https://noteapp-5e437.web.app/
+`To install the project: first run "npm install".To launch the project in local server: run "npm run serv"` or click here: https://noteapp-5e437.web.app/
 <br/>
 <br/>
 
